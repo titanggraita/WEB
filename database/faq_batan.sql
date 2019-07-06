@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 02, 2019 at 10:56 AM
--- Server version: 10.1.29-MariaDB
--- PHP Version: 7.2.0
+-- Generation Time: Jul 06, 2019 at 08:22 AM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 7.1.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -290,6 +290,42 @@ CREATE TABLE `stopword` (
   `kode_bahasa` set('en','id') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `stopword`
+--
+
+INSERT INTO `stopword` (`ID_stopword`, `daftar_kata`, `kode_bahasa`) VALUES
+(1, 'bego', 'id'),
+(2, 'goblok', 'id'),
+(3, 'tolol', 'id'),
+(4, 'dungu', 'id'),
+(5, 'bajingan', 'id'),
+(6, 'brengsek', 'id'),
+(7, 'jancuk', 'id'),
+(8, 'asu', 'id'),
+(9, 'geblek', 'id'),
+(10, 'gblk', 'id'),
+(11, 'anjg', 'id'),
+(12, 'bngst', 'id'),
+(13, 'sinting', 'id'),
+(14, 'bejat', 'id'),
+(15, 'bedebah', 'id'),
+(16, 'belegug', 'id'),
+(17, 'kontol', 'id'),
+(18, 'memek', 'id'),
+(19, 'ngentot', 'id'),
+(20, 'sundala', 'id'),
+(21, 'jembut', 'id'),
+(22, 'titit', 'id'),
+(23, 'fuck', 'en'),
+(24, 'shit', 'en'),
+(25, 'asshole', 'en'),
+(26, 'bitch', 'en'),
+(27, 'jerk', 'en'),
+(28, 'motherfucker', 'en'),
+(29, 'dumbass', 'en'),
+(30, 'keparat', 'id');
+
 -- --------------------------------------------------------
 
 --
@@ -413,6 +449,12 @@ ALTER TABLE `rating`
   ADD PRIMARY KEY (`kode_transaksi`);
 
 --
+-- Indexes for table `stopword`
+--
+ALTER TABLE `stopword`
+  ADD PRIMARY KEY (`ID_stopword`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -439,43 +481,41 @@ ALTER TABLE `xlevel`
 --
 ALTER TABLE `faq`
   MODIFY `ID_faq` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
 --
 -- AUTO_INCREMENT for table `faq_assigned`
 --
 ALTER TABLE `faq_assigned`
   MODIFY `ID_faqassigned` int(50) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `faq_attachment`
 --
 ALTER TABLE `faq_attachment`
   MODIFY `ID_faqattachment` int(50) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `kategori_faq`
 --
 ALTER TABLE `kategori_faq`
   MODIFY `ID_kategori` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
-
 --
 -- AUTO_INCREMENT for table `open_question`
 --
 ALTER TABLE `open_question`
   MODIFY `ID_question` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT for table `question assigned to contributor`
 --
 ALTER TABLE `question assigned to contributor`
   MODIFY `ID_assigned` int(50) NOT NULL AUTO_INCREMENT;
-
+--
+-- AUTO_INCREMENT for table `stopword`
+--
+ALTER TABLE `stopword`
+  MODIFY `ID_stopword` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID_user` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-COMMIT;
+  MODIFY `ID_user` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
