@@ -8,6 +8,7 @@ class User_model extends CI_Model
             "Password" => $this->input->post('Password', true)
         ];
         $this->db->where('Username', $data["Username"]);
+        $this->db->where('Password', $data["Password"]);
         $que = $this->db->get("user");
         return $que->num_rows();
     }
@@ -32,4 +33,3 @@ class User_model extends CI_Model
         return $this->db->insert('open_question', $data);
     }
 }
-?>
