@@ -44,7 +44,7 @@ body {font-family: "Lato", sans-serif;}
   <div class="row">
       <h4 style="color:#EEE8AA; margin-left:30px;margin-top:10px;">Welcome, kontributor!</h4>
     <div class="topnav" style="margin-left:480px;font-size:15px;">
-      <a href="<?=base_url()?>user/index"><i class="fa fa-fw fa-home fa-lg fa-2x"></i>Home</a>
+      <a href="<?=base_url()?>C_Admin/kontributor"><i class="fa fa-fw fa-home fa-lg fa-2x"></i>Home</a>
       <a href="<?=base_url()?>"><i class="fa fa-fw fa-envelope fa-lg"></i> Message</a>
       <a href="<?=base_url()?>" style="margin-left:-10px;"><i class="fa fa-fw fa-user fa-lg"></i>Profile</a>
     </div>
@@ -55,8 +55,9 @@ body {font-family: "Lato", sans-serif;}
 
 <div class="sidebar">
   <br>
-  <a href="#"><i class="fa fa-fw fa-tachometer"></i> Dashboard</a><br>
+  <a href="<?=base_url()?>C_Admin/kontributor"><i class="fa fa-fw fa-tachometer"></i> Dashboard</a><br>
   <a href="#"><i class="fa fa-fw fa-question-circle"></i> Question</a><br>
+  <a href="<?=base_url()?>C_login/logout"><i class="fa fa-fw fa-sign-out"></i> Sign Out</a>
   
 </div>
 
