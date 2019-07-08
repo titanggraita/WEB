@@ -12,7 +12,7 @@
   <div style="margin-bottom:100px;"></div>
   <hr>
 </nav>
-<div class="container-fluid" style="margin-top:100px; padding:10px 10px">
+<div class="container-fluid" style="margin-top:100px; padding:10px 10px 90px">
       <div class="input-group">
       	<input type="text" class="form-control" style="border-radius:40px;" placeholder="Search for articles ...">
         <span class="input-group-btn">

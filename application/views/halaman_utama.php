@@ -12,8 +12,9 @@
     </div>
     <p style="color:#EEE8AA; margin-left:370px; font-size:18px;">How can we help you today?</p>
     <div class="container-fluid">
+      
       <div class="input-group">
-      	<input type="text" class="form-control" style="border-radius:40px;" placeholder="Search for articles ...">
+      	<input type="text" action="<?php echo ('C_faq/search') ?>" class="form-control" style="border-radius:40px;" placeholder="Search for articles ...">
         <span class="input-group-btn">
           <button class="btn btn-search" type="button"><i class="fa fa-search fa-fw"></i> Search</button>
         </span>
