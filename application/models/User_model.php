@@ -12,6 +12,16 @@ class User_model extends CI_Model
         $que = $this->db->get("user");
         return $que->num_rows();
     }
+    public function getAllUser()
+    {
+        $que = $this->db->get('User');
+        return $que->result_array();
+    }
+    public function getAllKontributor()
+    {
+        $que = $this->db->get('kompetensi_kontributor');
+        return $que->result_array();
+    }
     public function tambahUser(){
         $data = [
             "Username" => $this->input->post('Username', true),
@@ -21,9 +31,11 @@ class User_model extends CI_Model
             "Institution" => $this->input->post('Institution', true),
             "Job" => $this->input->post('Job', true),
             "Province" => $this->input->post('Province', true),
-            "State" => $this->input->post('State', true)
+            "State" => $this->input->post('State', true),
+            "ID_level" => 3,
+            "Aktivasi" => 'T'
         ];
-        return $this->db->insert('user', $data);
+        $this->db->insert('user', $data);
     }
     public function tambahQuestion(){
         $data = [
