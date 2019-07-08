@@ -12,11 +12,11 @@
     </div>
     <p style="color:#EEE8AA; margin-left:370px; font-size:18px;">How can we help you today?</p>
     <div class="container-fluid">
-      <form action="" method="POST">
+      <form action="<?= base_url('c_faq/search') ?>" method="POST">
         <div class="input-group">
           <input type="text" class="form-control" style="border-radius:40px;" placeholder="Search for articles ...">
           <span class="input-group-btn">
-            <button class="btn btn-search" type="button"><i class="fa fa-search fa-fw"></i> Search</button>
+            <button class="btn btn-search" type="submit"><i class="fa fa-search fa-fw"></i> Search</button>
           </span>
         </div>
       </form>
