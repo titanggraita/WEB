@@ -55,27 +55,52 @@ body {font-family: "Lato", sans-serif;}
 
 <div class="sidebar">
   <br>
-  <a href="<?=base_url()?>C_Admin/index""><i class="fa fa-fw fa-tachometer"></i> Dashboard</a><br>
-  <a href="<?=base_url()?>C_Admin/lihat_user"><i class="fa fa-fw fa-users"></i> Public</a><br>
+  <a href="<?=base_url()?>C_Admin/index"><i class="fa fa-fw fa-tachometer"></i> Dashboard</a><br>
+  <a href="<?=base_url()?>C_Admin/lihat_user"><i class="fa fa-fw fa-users"></i> User</a><br>
   <a href="<?=base_url()?>C_Admin/lihat_kontributor"><i class="fa fa-fw fa-users"></i> Contributor</a><br>
   <a href="#"><i class="fa fa-fw fa-question-circle"></i> Question</a><br>
-  <a href="<?=base_url()?>C_Admin/lihat_category"><i class="fa fa-fw fa-bookmark"></i> Category</a><br>
-  <a href="<?=base_url()?>C_login/logout"><i class="fa fa-fw fa-sign-out"></i> Sign Out</a> 
+  <a href="<?=base_url()?>C_Admin/lihat_category"><i class="fa fa-fw fa-bookmark"></i> Category</a> <br>
+  <a href="<?=base_url()?>C_login/logout"><i class="fa fa-fw fa-sign-out"></i> Sign Out</a>
 </div>
 
-  <center style="margin-top:100px;"><h4>DATA KATEGORI</h4></center><br>
+  <center style="margin-top:100px;"><h4>DATA USER</h4></center><br>
+  <center><?php echo anchor('C_Admin/tambah','Tambah Data'); ?></center><br>
 	<center><table style="margin:20px auto;" border="1">
 		<tr>
-			<th>No</th>
-			<th>Nama Kategori</th>
+			      <th>No</th>
+            <!-- <th>Level</th> -->
+            <th>Username</th>
+			      <th>Email</th>
+            <th>Password</th>
+            <th>Nama</th>
+            <th>Institution</th>
+            <th>Job</th>
+            <th>Province</th>
+            <th>State</th>
+            <!-- <th>Aktivasi</th> -->
+			<th>Action</th>
 		</tr>
 		<?php 
 		$no = 1;
-		foreach($kategori as $k){ 
+		foreach($public as $u){ 
 		?>
 		<tr>
-			<td><?php echo $no++ ?></td>
-			<td><?php echo $k['Nama_kategori'];?></td>
+		      	<td><?php echo $no++ ?></td>
+           
+			      <td><?php echo $u['Username'];?></td>
+            <td><?php echo $u['Email'];?></td>
+            <td><?php echo $u['Password'];?></td>
+            <td><?php echo $u['Nama'];?></td>
+            <td><?php echo $u['Institution'];?></td>
+            <td><?php echo $u['Job'];?></td>
+            <td><?php echo $u['Province'];?></td>
+            <td><?php echo $u['State'];?></td>
+            
+
+			<td>
+            <?php echo anchor('C_Admin/ubah/'.$u['ID_user'],'Edit'); ?>
+                          <?php echo anchor('C_Admin/hapus/'.$u['ID_user'],'Hapus'); ?>
+			</td>
 		</tr>
 		<?php } ?>
 	</table>

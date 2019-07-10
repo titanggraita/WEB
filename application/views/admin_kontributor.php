@@ -64,12 +64,10 @@ body {font-family: "Lato", sans-serif;}
 </div>
 
   <center style="margin-top:100px;"><h4>DATA KOMPETENSI KONTRIBUTOR</h4></center><br>
-	<center><?php echo anchor('crud/tambah','Tambah Data'); ?></center><br>
 	<center><table style="margin:20px auto;" border="1">
 		<tr>
 			<th>No</th>
 			<th>Nama Bidang Kontributor</th>
-			<th>Action</th>
 		</tr>
 		<?php 
 		$no = 1;
@@ -78,10 +76,6 @@ body {font-family: "Lato", sans-serif;}
 		<tr>
 			<td><?php echo $no++ ?></td>
 			<td><?php echo $o['Nama_kompetensi'];?></td>
-			<td>
-            <?php echo anchor('crud/edit/'.$o['ID_kompetensi'],'Edit'); ?>
-                          <?php echo anchor('crud/hapus/'.$o['ID_kompetensi'],'Hapus'); ?>  
-			</td>
 		</tr>
 		<?php } ?>
 	</table>
