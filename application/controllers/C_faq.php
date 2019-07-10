@@ -10,7 +10,9 @@
 	    public function search(){
 			$keyword = $this->input->post('keyword');
 			$data['faq']=$this->Faq_model->get_faq_keyword($keyword);
+			$this->load->view('templates/header', $data);
 			$this->load->view('search_faq',$data);
+			$this->load->view('templates/footer');
 		}
     }
 ?>
