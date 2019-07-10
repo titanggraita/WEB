@@ -31,12 +31,39 @@ class User_model extends CI_Model
             "Institution" => $this->input->post('Institution', true),
             "Job" => $this->input->post('Job', true),
             "Province" => $this->input->post('Province', true),
-            "State" => $this->input->post('State', true),
-            "ID_level" => 3,
-            "Aktivasi" => 'T'
+            "State" => $this->input->post('State', true)
         ];
         $this->db->insert('user', $data);
     }
+    public function getUserById($id)
+	{
+		
+		return $this->db->get_where('user', ['ID_user' => $id])->row();
+    }
+    
+	public function hapusDataUser($ID_user)
+	{
+		
+		return $this->db->get($ID_user);
+	}
+
+	public function ubahDataUser($ID_user)
+	{
+		$data = [
+			"Username" => $this->input->post('Username', true),
+            "Email" => $this->input->post('Esername', true),
+			"Password" => $this->input->post('password', true),
+            "Nama" => $this->input->post('Nama', true),
+            "Institution" => $this->input->post('Institution', true),
+            "Job" => $this->input->post('Job', true),
+            "Province" => $this->input->post('Province', true),
+            "State" => $this->input->post('State', true)
+		];
+		
+		$this->db->where('ID_user',$ID_user);
+		$this->db->update('user',$data);
+    }
+    
     public function tambahQuestion(){
         $data = [
             "username" => $this->input->post('username', true),
@@ -44,4 +71,5 @@ class User_model extends CI_Model
         ];
         return $this->db->insert('open_question', $data);
     }
+
 }
