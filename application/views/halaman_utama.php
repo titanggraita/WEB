@@ -14,7 +14,7 @@
     <div class="container-fluid">
       <form action="<?= base_url('c_faq/search') ?>" method="POST">
         <div class="input-group">
-          <input type="text" class="form-control" style="border-radius:40px;" placeholder="Search for articles ...">
+          <input type="text" class="form-control" style="border-radius:40px;" placeholder="Search for articles ..." name="keyword">
           <span class="input-group-btn">
             <button class="btn btn-search" type="submit"><i class="fa fa-search fa-fw"></i> Search</button>
           </span>
