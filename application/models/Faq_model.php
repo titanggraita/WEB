@@ -6,10 +6,15 @@
 			$this->db->like('pertanyaan', $keyword);
 			$this->db->or_like('jawaban', $keyword);
 			$this->db->or_like('keyword', $keyword);
+			$this->db->or_like('kategori', $keyword);
 			return $this->db->get('faq')->result_array();;
 		}
 		public function getAllQuestionFromFAQ(){
         	$que = $this->db->get('faq');
+        	return $que->result_array();
+		}
+		public function getAllQuestionFromQuestionAssigned(){
+        	$que = $this->db->get('question_assigned_to_contributor');
         	return $que->result_array();
 		}
 		public function getAllQuestionFromOP()
@@ -21,6 +26,11 @@
 		{
 		
 			return $this->db->get_where('faq', ['ID_faq' => $id])->row();
+		}
+		public function getQuestionKontributorById($id)
+		{
+		
+			return $this->db->get_where('question_assigned_to_contributor', ['ID_assigned' => $id])->row();
 		}
 		public function getOPById($id)
 		{
@@ -36,6 +46,16 @@
 		
 			$this->db->where('ID_question',$ID_question);
 			$this->db->update('open_question',$data);
+		}
+		public function answerKontributor($id)
+		{
+			$data = [
+				"pertanyaan" => $this->input->post('pertanyaan', true),
+				"jawaban" => $this->input->post('jawaban', true)
+			];
+		
+			$this->db->where('ID_assigned',$id);
+			$this->db->update('question_assigned_to_contributor',$data);
 		}
 		public function hapusOpenQuestion($ID_question)
 		{
@@ -85,6 +105,22 @@
 		
 			$this->db->where('ID_question',$ID_question);
 			$this->db->insert('faq',$data);
+		}
+		
+		public function tambahFaqKontributor(){
+			$data = [
+				"pertanyaan" => $this->input->post('pertanyaan', true),
+            	"jawaban" => $this->input->post('jawaban', true)
+			];
+			$this->db->insert('question_assigned_to_contributor', $data);
+		}
+		public function ubahDataFaqKontributor($id){
+			$data = [
+				"pertanyaan" => $this->input->post('pertanyaan', true),
+            	"jawaban" => $this->input->post('jawaban', true)
+			];
+			$this->db->where('ID_assigned',$id);
+			$this->db->update('question_assigned_to_contributor',$data);
 		}
 
 		
