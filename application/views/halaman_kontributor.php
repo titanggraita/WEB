@@ -55,10 +55,8 @@ body {font-family: "Lato", sans-serif;}
 
 <div class="sidebar">
   <br>
-  <a href="<?=base_url()?>C_Admin/kontributor"><i class="fa fa-fw fa-tachometer"></i> Dashboard</a><br>
-  <a href="#"><i class="fa fa-fw fa-question-circle"></i> Question</a><br>
-  
-  
+  <a href="<?=base_url()?>C_kontributor"><i class="fa fa-fw fa-tachometer"></i> Dashboard</a><br>
+  <a href="<?=base_url()?>C_kontributor/lihat_questionKontributor"><i class="fa fa-fw fa-question-circle"></i> Question</a><br>
 </div>
 
 
@@ -66,8 +64,6 @@ body {font-family: "Lato", sans-serif;}
 </body>
 </html> 
 
-
-<!-- NANTI DIBAWAH NYA ADA HASIL FAQ YANG DIA JAWAB -->
 
 
 

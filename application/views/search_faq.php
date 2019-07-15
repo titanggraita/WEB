@@ -35,13 +35,13 @@
             <a class="text-primary lihat_jawab" data-toggle="collapse" href="#collapse<?= $data['ID_faq'] ?>" role="button" aria-expanded="false" aria-controls="collapseExample">lihat jawaban</a>
             <div class="collapse" id="collapse<?= $data['ID_faq'] ?>">
               <div class="jawaban">
-
                 <p class="card-text"><?= $data['jawaban'] ?></p>
               </div>
             </div>
           </div>
           <div class="card-footer">
             <small class="text-secondary">Last Updated <?= $data['dateupdated'] ?></small><br>
+            <small class="text-secondary">Kategori: <?= $data['kategori'] ?></small><br>
             <small class="text-secondary">Author: <?= $data['author'] ?></small>
           </div>
         </div>

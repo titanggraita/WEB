@@ -95,6 +95,8 @@ body {font-family: "Lato", sans-serif;}
 		<?php } ?>
 	</table>
   </center>
+
+
   <center style="margin-top:100px;margin-left:150px;"><h4>DATA QUESTION & ANSWER</h4></center><br>
   <center style="margin-left:150px;"><?php echo anchor('C_Admin/tambah_Faq/','Tambah Pertanyaan'); ?></center><br>
   <center><table style="margin:20px auto;margin-left:168px;" border="1" cellspacing="7" cellpadding="7">
@@ -103,6 +105,7 @@ body {font-family: "Lato", sans-serif;}
       <th>ID FAQ</th>
 			<th>Pertanyaan</th>
       <th>Jawaban</th>
+      <th>Kategori</th>
       <th>Keyword</th>
       <th>Author</th>
       <th>Status</th>
@@ -119,6 +122,7 @@ body {font-family: "Lato", sans-serif;}
       <td><?php echo $f['ID_faq'];?></td>
 			<td><?php echo $f['pertanyaan'];?></td>
       <td><?php echo $f['jawaban'];?></td>
+      <td><?php echo $f['kategori'];?></td>
       <td><?php echo $f['keyword'];?></td>
       <td><?php echo $f['author'];?></td>
       <td><?php echo $f['status'];?></td>

@@ -74,6 +74,9 @@ body {font-family: "Lato", sans-serif;}
                         <a style="color:#3AAFA9;">Jawaban :</a><input type="text" class="form-control" id="jawaban" placeholder="jawaban" name="jawaban" value="<?php echo $publish->jawaban ?>"readonly>
                     </div>
                     <div class="form-group">
+                        <a style="color:#3AAFA9;">Kategori :</a><input type="text" class="form-control" id="kategori" placeholder="kategori" name="kategori">
+                    </div>
+                    <div class="form-group">
                         <a style="color:#3AAFA9;">Keyword :</a><input type="text" class="form-control" id="keyword" placeholder="keyword" name="keyword">
                     </div>
                     <div class="form-group">
@@ -83,8 +86,9 @@ body {font-family: "Lato", sans-serif;}
                       <a style="color:#3AAFA9;">Status :</a><input type="text" class="form-control" id="status" placeholder="status" name="status">
                     </div>
                     
-                    <button type="submit" class="btn btn-block" style="background-color:#3AAFA9; color: #EEE88A;">Submit</button>
+                    <button type="submit" name="submit" value="submit" class="btn btn-block" style="background-color:#3AAFA9; color: #EEE88A;">Submit</button>
                 </form>
+                
             </div>
         </div>
 

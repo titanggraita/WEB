@@ -30,9 +30,10 @@
     <?php
     foreach ($kategori as $data) {
       ?>
-      <div class="col-md-4" style="margin:-50px;">
+      <div class="col-4" style="margin:-50px;">
         <div id="box_kategori" style="padding: 14px 16px;">
           <a><?php echo $data['Nama_kategori']; ?></a>
+          
         </div>
       </div>
     <?php
