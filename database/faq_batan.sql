@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 15, 2019 at 08:10 AM
+-- Generation Time: Jul 15, 2019 at 05:24 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -32,7 +32,7 @@ CREATE TABLE `faq` (
   `ID_faq` int(50) NOT NULL,
   `pertanyaan` varchar(200) NOT NULL,
   `jawaban` varchar(1000) NOT NULL,
-  `kategori` varchar(100) NOT NULL,
+  `kategori` enum('Batan','Daur Bahan Bakar Nuklir dan Bahan Maju','Isotop dan Radiasi','Keselamatan dan Keamanan Nuklir','Reaktor Nuklir','Rekayasa Perangkat dan Fasilitas Nuklir') NOT NULL,
   `keyword` varchar(50) NOT NULL,
   `author` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
@@ -46,18 +46,18 @@ CREATE TABLE `faq` (
 --
 
 INSERT INTO `faq` (`ID_faq`, `pertanyaan`, `jawaban`, `kategori`, `keyword`, `author`, `email`, `datecreated`, `dateupdated`, `status`) VALUES
-(1, 'Apasih BATAN itu?', 'BATAN adalah lembaga pemerintah non departemen yang melakukan penilitian dan pengembangan. BATAN berada di bawah Kementrian Negara Riset dan Teknologi, seperti juga BPPT, LIPI, BAPETEN, BSN, BAKOSURTANAL, LAPAN.', '', 'batan', 'Admin', '', '2019-07-02 06:38:13', '2019-07-02 06:38:13', 'active'),
-(2, 'Apa yang sudah dikembangkan oleh BATAN?', 'BATAN mengembangkan teknik nuklir untuk bidang pangan, energi, kesehatan & obat, diseminasi & teknologi informasi bidang nuklir.', '', 'batan', 'Admin', '', '2019-07-02 06:39:05', '2019-07-02 06:39:05', 'active'),
-(3, 'Apakah BATAN punya cabang di daerah?', 'BATAN tidak memiliki kantor cabang, namun BATAN memiliki fasilitas penelitian di berbagai kota. BATAN memiliki fasilitas di Pasar Jum\'at, Jakarta Selatan, di Pupiptek Serpong Tangerang, di Bandung (dekat ITB), di Jl. Babarsari, Sleman, Yogyakarta, dan di Ujungwatu, Jepara.', '', 'batan', 'Admin', '', '2019-07-02 06:43:03', '2019-07-02 06:43:03', 'active'),
-(4, 'Apakah BATAN sama dengan BAPETEN?', 'Berdasarkan UU No.10 Tahun 1997 tentang Ketenaganukliran, BATAN memiliki tugas penelitian dan pengembangan, penyelidikan umum, eksplorasi dan eksploitasi bahan galian nuklir, produksi bahan baku untuk pembuatan dan produksi bahan bakar nuklir, produksi radioisotop untuk keperluan penelitian dan pengembangan, dan pengelolaan limbah radioaktif. Sementara BAPETEN memiliki tugas pengaturan, perizinan, dan inspeksi. Dengan kata lain, BATAN yang melakukan litbang, BAPETEN yang melakukan pengawasan. Reaktor Nuklir BATAN selalu diinspeksi oleh BAPETEN.', '', 'batan, bapeten', 'Admin', '', '2019-07-02 06:47:33', '2019-07-02 06:47:33', 'active'),
-(5, 'Apakah hubungan antara BATAN dan PLTN?', 'BATAN, bersama-sama dengan BPPT, Dept. ESDM, PLN dan instansi terkait lainnya serta dengan bantuan IAEA pada tahun 2001-2002, melakukan kajian dan perhitungan tentang layak-tidaknya PLTN dibangun dan dioperasikan di Indonesia pada sekitar tahun 2017.', '', 'batan, pltn, PLTN', 'Admin', '', '2019-07-02 06:57:44', '2019-07-02 06:57:44', 'active'),
-(6, 'Apakah BATAN mengembangkan senjata nuklir?', 'BATAN hanya mengembangkan dan meneliti nuklir untuk maksud-maksud damai, tidak untuk keperluan merusak, persenjataan ataupun kepentingan militer lainnya. BATAN menjadi salah satu penandatangan traktat NPT (Nuclear Non Proliferation Treaty) atau pakta untuk tidak menyebarluaskan senjata nuklir. Traktat itu sendiri mulai dirintis sejak 1 Juli 1968. Dari 180 lebih anggota Badan tenaga Nuklir Internasional (IAEA), hanya 4 negara yang tidak berpartisipasi dalam traktat ini. Negara tersebut adalah India, Israel, Korea Utara dan Pakiskan. BATAN juga tidak melakukan upaya pengkayaan uranium.', '', 'batan, nuklir', 'Admin', '', '2019-07-02 06:57:44', '2019-07-02 06:57:44', 'active'),
-(7, 'Kenapa kita butuh PLTN?', 'Sesuai Peraturan Presiden RI No. 5 Tahun 2006 tentang Kebijaksanaan Energi Nasional telah menetapkan sasaran terwujudnya bauran energi (energy mix) yang optimal pada tahun 2O25, yaitu peranan masing-masing jenis energi terhadap konsumsi energi nasional. Sasaran yang ditargetkan khususnya untuk biomassa, nuklir, tenaga air, tenaga surya dan tenaga angin menjadi lebih dari 5%. Sesuai dengan Undang-undang No. 17 tahun 2007 tentang RPJPN, pada RPJM ke-3 (2015-2019) mulai dimanfaatkannya tenaga nuklir untuk pembangkitan listrik dengan mempertimbangkan faktor keselamatan yang ketat dan sesuai dengan Undang-undang No. 30 tahun 2007 tentang Energi, bahwa sumber daya energi fosil, panas bumi, hidro skala besar dan sumber energi nuklir dikuasai oleh negara dan dimanfaatkan untuk sebesar-besarnya untuk kemakmuran rakyat.', '', 'pltn, PLTN', 'Admin', '', '2019-07-02 07:04:43', '2019-07-02 07:04:43', 'active'),
-(8, 'Berapa korban kecelakaan nuklir selama ini?', 'Selama 64 tahun terakhir terjadi 31 kecelakaan yang merenggut korban 539 orang, 186 diantaranya meninggal. Dalam 18 tahun terakhir ada 14 kecelakaan di Industri Kimia yang merenggut korban 64.652 orang, 4.287 diantaranya meninggal. Khusus di Indonesia dalam 5 tahun terakhir ada 76.866 orang korban kecelakaan lalu lintas, 54.733 diantaranya meninggal (30 orang/hari).', '', 'nuklir', 'Admin', '', '2019-07-02 08:49:01', '2019-07-02 08:49:01', 'active'),
-(9, 'Apa peranan BATAN dalam pembuatan PLTN?', 'Bisa sebagai pemasok tenaga profesional bidang nuklir. (Catatan : Semua SDM yang terkait dengan pengelolaan zat radioaktif wajib mengantongi sertifikasi kompetensi dan diawasi oleh BAPETEN, termasuk untuk NDT dan PLTN.)', '', 'batan, pltn, PLTN', 'Admin', '', '2019-07-02 08:49:45', '2019-07-02 08:49:45', 'active'),
-(10, 'Bagaimana nuklir dapat menghasilkan listrik?', 'Nuklir diproses menghasilkan panas yang akan dipakai menggerakkan turbin pembangkit listrik', '', 'nuklir, listrik', 'Admin', '', '2019-07-02 08:51:32', '2019-07-02 08:51:32', 'active'),
-(11, 'Apakah peranan Energi Nuklir dalam pembangkitan Listrik?', 'Diversifikasi:pasokan energi dalam bentuk listrik Konservasi:penghematan penggunaan sumber daya energi nasional Pelestarian Lingkungan : Mengurangi emisi gas rumah kaca (GHC) secara signifikan', '', 'nuklir, listrik', 'Admin', '', '2019-07-02 08:51:32', '2019-07-02 08:51:32', 'active'),
-(14, 'apa kepanjangan dari BATAN?', 'badan tenaga nuklir nasional', '', 'batan', 'kontributor 1', '', '2019-07-15 02:06:09', '2019-07-15 02:06:09', 'active');
+(1, 'Apasih BATAN itu?', 'BATAN adalah lembaga pemerintah non departemen yang melakukan penilitian dan pengembangan. BATAN berada di bawah Kementrian Negara Riset dan Teknologi, seperti juga BPPT, LIPI, BAPETEN, BSN, BAKOSURTANAL, LAPAN.', 'Batan', 'batan', 'Admin', '', '2019-07-02 06:38:13', '2019-07-02 06:38:13', 'active'),
+(2, 'Apa yang sudah dikembangkan oleh BATAN?', 'BATAN mengembangkan teknik nuklir untuk bidang pangan, energi, kesehatan & obat, diseminasi & teknologi informasi bidang nuklir.', 'Batan', 'batan', 'Admin', '', '2019-07-02 06:39:05', '2019-07-02 06:39:05', 'active'),
+(3, 'Apakah BATAN punya cabang di daerah?', 'BATAN tidak memiliki kantor cabang, namun BATAN memiliki fasilitas penelitian di berbagai kota. BATAN memiliki fasilitas di Pasar Jum\'at, Jakarta Selatan, di Pupiptek Serpong Tangerang, di Bandung (dekat ITB), di Jl. Babarsari, Sleman, Yogyakarta, dan di Ujungwatu, Jepara.', 'Batan', 'batan', 'Admin', '', '2019-07-02 06:43:03', '2019-07-02 06:43:03', 'active'),
+(4, 'Apakah BATAN sama dengan BAPETEN?', 'Berdasarkan UU No.10 Tahun 1997 tentang Ketenaganukliran, BATAN memiliki tugas penelitian dan pengembangan, penyelidikan umum, eksplorasi dan eksploitasi bahan galian nuklir, produksi bahan baku untuk pembuatan dan produksi bahan bakar nuklir, produksi radioisotop untuk keperluan penelitian dan pengembangan, dan pengelolaan limbah radioaktif. Sementara BAPETEN memiliki tugas pengaturan, perizinan, dan inspeksi. Dengan kata lain, BATAN yang melakukan litbang, BAPETEN yang melakukan pengawasan. Reaktor Nuklir BATAN selalu diinspeksi oleh BAPETEN.', 'Batan', 'batan, bapeten', 'Admin', '', '2019-07-02 06:47:33', '2019-07-02 06:47:33', 'active'),
+(5, 'Apakah hubungan antara BATAN dan PLTN?', 'BATAN, bersama-sama dengan BPPT, Dept. ESDM, PLN dan instansi terkait lainnya serta dengan bantuan IAEA pada tahun 2001-2002, melakukan kajian dan perhitungan tentang layak-tidaknya PLTN dibangun dan dioperasikan di Indonesia pada sekitar tahun 2017.', 'Batan', 'batan, pltn, PLTN', 'Admin', '', '2019-07-02 06:57:44', '2019-07-02 06:57:44', 'active'),
+(6, 'Apakah BATAN mengembangkan senjata nuklir?', 'BATAN hanya mengembangkan dan meneliti nuklir untuk maksud-maksud damai, tidak untuk keperluan merusak, persenjataan ataupun kepentingan militer lainnya. BATAN menjadi salah satu penandatangan traktat NPT (Nuclear Non Proliferation Treaty) atau pakta untuk tidak menyebarluaskan senjata nuklir. Traktat itu sendiri mulai dirintis sejak 1 Juli 1968. Dari 180 lebih anggota Badan tenaga Nuklir Internasional (IAEA), hanya 4 negara yang tidak berpartisipasi dalam traktat ini. Negara tersebut adalah India, Israel, Korea Utara dan Pakiskan. BATAN juga tidak melakukan upaya pengkayaan uranium.', 'Batan', 'batan, nuklir', 'Admin', '', '2019-07-02 06:57:44', '2019-07-02 06:57:44', 'active'),
+(7, 'Kenapa kita butuh PLTN?', 'Sesuai Peraturan Presiden RI No. 5 Tahun 2006 tentang Kebijaksanaan Energi Nasional telah menetapkan sasaran terwujudnya bauran energi (energy mix) yang optimal pada tahun 2O25, yaitu peranan masing-masing jenis energi terhadap konsumsi energi nasional. Sasaran yang ditargetkan khususnya untuk biomassa, nuklir, tenaga air, tenaga surya dan tenaga angin menjadi lebih dari 5%. Sesuai dengan Undang-undang No. 17 tahun 2007 tentang RPJPN, pada RPJM ke-3 (2015-2019) mulai dimanfaatkannya tenaga nuklir untuk pembangkitan listrik dengan mempertimbangkan faktor keselamatan yang ketat dan sesuai dengan Undang-undang No. 30 tahun 2007 tentang Energi, bahwa sumber daya energi fosil, panas bumi, hidro skala besar dan sumber energi nuklir dikuasai oleh negara dan dimanfaatkan untuk sebesar-besarnya untuk kemakmuran rakyat.', 'Batan', 'pltn, PLTN', 'Admin', '', '2019-07-02 07:04:43', '2019-07-02 07:04:43', 'active'),
+(8, 'Berapa korban kecelakaan nuklir selama ini?', 'Selama 64 tahun terakhir terjadi 31 kecelakaan yang merenggut korban 539 orang, 186 diantaranya meninggal. Dalam 18 tahun terakhir ada 14 kecelakaan di Industri Kimia yang merenggut korban 64.652 orang, 4.287 diantaranya meninggal. Khusus di Indonesia dalam 5 tahun terakhir ada 76.866 orang korban kecelakaan lalu lintas, 54.733 diantaranya meninggal (30 orang/hari).', 'Batan', 'nuklir', 'Admin', '', '2019-07-02 08:49:01', '2019-07-02 08:49:01', 'active'),
+(9, 'Apa peranan BATAN dalam pembuatan PLTN?', 'Bisa sebagai pemasok tenaga profesional bidang nuklir. (Catatan : Semua SDM yang terkait dengan pengelolaan zat radioaktif wajib mengantongi sertifikasi kompetensi dan diawasi oleh BAPETEN, termasuk untuk NDT dan PLTN.)', 'Batan', 'batan, pltn, PLTN', 'Admin', '', '2019-07-02 08:49:45', '2019-07-02 08:49:45', 'active'),
+(10, 'Bagaimana nuklir dapat menghasilkan listrik?', 'Nuklir diproses menghasilkan panas yang akan dipakai menggerakkan turbin pembangkit listrik', 'Batan', 'nuklir, listrik', 'Admin', '', '2019-07-02 08:51:32', '2019-07-02 08:51:32', 'active'),
+(11, 'Apakah peranan Energi Nuklir dalam pembangkitan Listrik?', 'Diversifikasi:pasokan energi dalam bentuk listrik Konservasi:penghematan penggunaan sumber daya energi nasional Pelestarian Lingkungan : Mengurangi emisi gas rumah kaca (GHC) secara signifikan', 'Batan', 'nuklir, listrik', 'Admin', '', '2019-07-02 08:51:32', '2019-07-02 08:51:32', 'active'),
+(31, 'apa kepanjangan dari BATAN?', 'badan tenaga nuklir nasional', 'Batan', 'batan', 'kontributor 1', '', '2019-07-15 13:04:58', '2019-07-15 13:04:58', 'active');
 
 -- --------------------------------------------------------
 
@@ -92,7 +92,7 @@ CREATE TABLE `faq_attachment` (
 CREATE TABLE `kategori_faq` (
   `ID_kategori` int(200) NOT NULL,
   `Nama_kategori` varchar(100) NOT NULL,
-  `ID_parent` enum('0','1','2','3','4') NOT NULL
+  `ID_parent` enum('0','1','2','3','4','5') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -105,92 +105,7 @@ INSERT INTO `kategori_faq` (`ID_kategori`, `Nama_kategori`, `ID_parent`) VALUES
 (3, 'Keselamatan dan Keamanan Nuklir', '2'),
 (4, 'Reaktor Nuklir', '3'),
 (5, 'Rekayasa Perangkat dan Fasilitas Nuklir', '4'),
-(6, 'Bahan Bakar Nuklir', '0'),
-(7, 'Bahan Galian Nuklir', '0'),
-(8, 'Bahan Struktur dan Bahan Maju', '0'),
-(9, 'Limbah Radioaktif', '0'),
-(10, 'Operasi dan Pemeliharaan Instalasi Bahan Bakar Nuklir', '0'),
-(11, 'Teknik Fabrikasi Bahan Bakar Nuklir ', '0'),
-(12, 'Teknik Karakterisasi Bahan Bakar Nuklir', '0'),
-(13, 'Teknik Pemurnian dan Konversi Bahan Bakar Nuklir', '0'),
-(14, 'Teknik Sintesis Bahan Bakar Nuklir', '0'),
-(15, 'Teknik Eksplorasi Bahan Galian Nuklir', '0'),
-(16, 'Teknik Penambangan Bahan Galian Nuklir ', '0'),
-(17, 'Teknik Pengolahan Bahan Galian Nuklir', '0'),
-(18, 'Teknik Sintesis Bahan Maju', '0'),
-(19, 'Teknik Sintesis Bahan Struktur', '0'),
-(20, 'Operasi dan Pemeliharaan Instalasi Limbah Radioaktif', '0'),
-(21, 'Teknik Dekomisioning', '0'),
-(22, 'Teknik Dekontaminasi', '0'),
-(23, 'Teknik Pengolahan Limbah Radioaktif ', '0'),
-(24, 'Teknik Penyimpanan Limbah Radioaktif', '0'),
-(25, 'Pemanfaatan Isotop dan Radiasi', '1'),
-(26, 'Produksi Isotop dan Sumber Radiasi', '1'),
-(27, 'Bidang Industri', '1'),
-(28, 'Bidang Kesehatan', '1'),
-(29, 'Bidang Pertanian', '1'),
-(30, 'Bidang Peternakan', '1'),
-(31, 'Bidang SDA/Lingkungan', '1'),
-(32, 'Akselerator ', '1'),
-(33, 'Iradiator', '1'),
-(34, 'Operasi Fasilitas Produksi Isotop dan Radiofarmaka', '1'),
-(35, 'Pemeliharaan Fasilitas Produksi Isotop dan Radiofarmaka', '1'),
-(36, 'Teknik Produksi Radiofarmaka', '1'),
-(37, 'Teknik Produksi Radioisotop', '1'),
-(38, 'Keamanan Nuklir dan Seifgard', '2'),
-(39, 'Keselamatan Lingkungan', '2'),
-(40, 'Keselamatan Pengangkutan Zat Radioaktif dan Bahan Nuklir', '2'),
-(41, 'Keselamatan Radiasi dan Kesehatan Kerja', '2'),
-(42, 'Keselamatan Reaktor dan Instalasi Nuklir Non-Reaktor', '2'),
-(43, 'Keamanan Nuklir', '2'),
-(44, 'Seifgard', '2'),
-(45, 'Analisis Mengenai Dampak Lingkungan', '2'),
-(46, 'Keselamatan Radiasi Lingkungan', '2'),
-(47, 'Remediasi Lingkungan', '2'),
-(48, 'Keselamatan dan Keamanan Pengangkutan', '2'),
-(49, 'Teknik Bungkusan', '2'),
-(50, 'Dosimetri Radiasi', '2'),
-(51, 'Kedaruratan Radiasi', '2'),
-(52, 'Keselamatan dan Kesehatan Kerja', '2'),
-(53, 'Metrologi Radiasi', '2'),
-(54, 'Proteksi Radiasi', '2'),
-(55, 'Keselamatan Operasi Reaktor dan Instalasi Nuklir Non-Reaktor', '2'),
-(56, 'Manajemen Kecelakaan dan Kedaruratan Fasilitas Nuklir ', '2'),
-(57, 'Manajemen Penuaan Fasilitas Nuklir', '2'),
-(58, 'Teknologi Keselamatan dan Keandalan Deterministik/Probabilistik', '2'),
-(59, 'Operasi dan Pemeliharaan Reaktor', '3'),
-(60, 'Pemanfaatan Reaktor', '3'),
-(61, 'Perencanaan Sistem Energi Nuklir', '3'),
-(62, 'Teknologi Reaktor', '3'),
-(63, 'Operasi', '3'),
-(64, 'Pemeliharaan ', '3'),
-(65, 'Eksperimen Reaktor', '3'),
-(66, 'Iradiasi Target', '3'),
-(67, 'Kogenerasi Reaktor Daya', '3'),
-(68, 'Pembangkitan Listrik Reaktor Daya', '3'),
-(69, 'Teknologi Berkas Neutron', '3'),
-(70, 'Kajian Infrastruktur Sistem Energi Nuklir', '3'),
-(71, 'Kajian Tapak Reaktor Nuklir', '3'),
-(72, 'Kajian Tekno Ekonomi Reaktor Nuklir', '3'),
-(73, 'Fisika Reaktor', '3'),
-(74, 'Instrumentasi dan Kendali Reaktor', '3'),
-(75, 'Kimia Reaktor', '3'),
-(76, 'Sistem Reaktor', '3'),
-(77, 'Elektromekanik dan Kendali', '4'),
-(78, 'Instrumentasi Nuklir', '4'),
-(79, 'Mekanik dan Struktur', '4'),
-(80, 'Teknologi Proses Fasilitas Nuklir', '4'),
-(81, 'Elektrikal', '4'),
-(82, 'Elektromekanik', '4'),
-(83, 'Sistem Kendali', '4'),
-(84, 'Deteksi Radiasi', '4'),
-(85, 'Elektronika Nuklir', '4'),
-(86, 'Teknik Akuisisi Data dan Pengolahan Sinyal', '4'),
-(87, 'Teknik Pengolahan Citra', '4'),
-(88, 'Mekanik', '4'),
-(89, 'Sipil dan Arsitektur', '4'),
-(90, 'Proses Non Nuklir', '4'),
-(91, 'Proses Nuklir', '4');
+(6, 'Batan', '5');
 
 -- --------------------------------------------------------
 
@@ -254,19 +169,27 @@ INSERT INTO `open_question` (`ID_question`, `username`, `pertanyaan`, `jawaban`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `question assigned to contributor`
+-- Table structure for table `question_assigned_to_contributor`
 --
 
-CREATE TABLE `question assigned to contributor` (
-  `ID_assigned` int(50) NOT NULL,
-  `ID_question` int(50) NOT NULL,
-  `ID_user` int(50) NOT NULL,
+CREATE TABLE `question_assigned_to_contributor` (
+  `ID_assigned` int(100) NOT NULL,
+  `ID_question` int(100) NOT NULL,
+  `ID_user` int(100) NOT NULL,
   `ID_kompetensi` int(100) NOT NULL,
-  `timestamp_assigned` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `pertanyaan` varchar(50) NOT NULL,
-  `jawaban` varchar(50) NOT NULL,
+  `timestamp_assigned` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `pertanyaan` varchar(500) NOT NULL,
+  `jawaban` varchar(500) NOT NULL,
   `date_answered` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `question_assigned_to_contributor`
+--
+
+INSERT INTO `question_assigned_to_contributor` (`ID_assigned`, `ID_question`, `ID_user`, `ID_kompetensi`, `timestamp_assigned`, `pertanyaan`, `jawaban`, `date_answered`) VALUES
+(2, 0, 0, 0, '2019-07-15 14:28:52', 'halo', 'p', '2019-07-15 14:28:52'),
+(3, 1, 1, 17258, '2019-07-15 14:37:57', 'lalalaa', '', '2019-07-15 14:37:57');
 
 -- --------------------------------------------------------
 
@@ -361,8 +284,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`ID_user`, `ID_level`, `Username`, `Password`, `Email`, `Nama`, `Institution`, `Job`, `Province`, `State`, `Register`, `lastvisit`, `lastmodified`, `modifiedby`, `Aktivasi`, `Kode_aktivasi`) VALUES
 (1, '1', 'Admin', 'Admin', 'Admin@gmail.com', 'Admin', 'BATAN', 'BATAN', 'INDONESIA', 'INDONESIA', '2019-07-12 03:23:50', '2019-07-12 03:23:50', '2019-07-12 03:23:50', '', 'Y', ''),
-(15, '2', 'titanggraita', 'tita', 'titanggraita@gmail.com', 'titanggraita', 'BATAN', 'BATAN', 'INDONESIA', 'INDONESIA', '2019-07-12 03:28:05', '2019-07-12 03:28:05', '2019-07-12 03:28:05', '', 'Y', ''),
-(17, '3', 'p', 'p', 'p@gmail.com', 'p', 'p', 'p', 'p', 'p', '2019-07-12 08:03:45', '2019-07-12 08:03:45', '2019-07-12 08:03:45', '', 'T', '');
+(15, '2', 'kontributor', 'kontributor', 'kontributor@gmail.com', 'kontributor', 'BATAN', 'BATAN', 'INDONESIA', 'INDONESIA', '2019-07-12 03:28:05', '2019-07-12 03:28:05', '2019-07-12 03:28:05', '', 'Y', '');
 
 -- --------------------------------------------------------
 
@@ -441,13 +363,10 @@ ALTER TABLE `open_question`
   ADD PRIMARY KEY (`ID_question`);
 
 --
--- Indexes for table `question assigned to contributor`
+-- Indexes for table `question_assigned_to_contributor`
 --
-ALTER TABLE `question assigned to contributor`
-  ADD PRIMARY KEY (`ID_assigned`),
-  ADD KEY `ID_question` (`ID_question`),
-  ADD KEY `ID_user` (`ID_user`),
-  ADD KEY `ID_kompetensi` (`ID_kompetensi`);
+ALTER TABLE `question_assigned_to_contributor`
+  ADD PRIMARY KEY (`ID_assigned`);
 
 --
 -- Indexes for table `rating`
@@ -487,7 +406,7 @@ ALTER TABLE `xlevel`
 -- AUTO_INCREMENT for table `faq`
 --
 ALTER TABLE `faq`
-  MODIFY `ID_faq` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `ID_faq` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `faq_assigned`
@@ -505,7 +424,7 @@ ALTER TABLE `faq_attachment`
 -- AUTO_INCREMENT for table `kategori_faq`
 --
 ALTER TABLE `kategori_faq`
-  MODIFY `ID_kategori` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+  MODIFY `ID_kategori` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT for table `open_question`
@@ -514,10 +433,10 @@ ALTER TABLE `open_question`
   MODIFY `ID_question` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `question assigned to contributor`
+-- AUTO_INCREMENT for table `question_assigned_to_contributor`
 --
-ALTER TABLE `question assigned to contributor`
-  MODIFY `ID_assigned` int(50) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `question_assigned_to_contributor`
+  MODIFY `ID_assigned` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `stopword`
@@ -530,17 +449,6 @@ ALTER TABLE `stopword`
 --
 ALTER TABLE `user`
   MODIFY `ID_user` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `question assigned to contributor`
---
-ALTER TABLE `question assigned to contributor`
-  ADD CONSTRAINT `question assigned to contributor_ibfk_1` FOREIGN KEY (`ID_user`) REFERENCES `user` (`ID_user`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `question assigned to contributor_ibfk_2` FOREIGN KEY (`ID_kompetensi`) REFERENCES `kompetensi_kontributor` (`ID_kompetensi`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
