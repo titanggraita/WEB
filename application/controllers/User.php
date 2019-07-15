@@ -19,6 +19,14 @@ class User extends CI_Controller {
 		$this->load->view('halaman_utama',$data);
 		$this->load->view('templates/footer');
 	}
+	public function public()
+	{
+		$data['title'] = "FAQ - BATAN";
+		$data['kategori'] = $this->Kategori_model->getAllKategori();
+		$this->load->view('templates/header',$data);
+		$this->load->view('public',$data);
+		$this->load->view('templates/footer');
+	}
 	public function about()
 	{
 		$data['title'] = "FAQ - BATAN - About";
@@ -63,7 +71,7 @@ class User extends CI_Controller {
                 "pertanyaan" => $this->input->post('pertanyaan', true),
             ];
             $this->session->set_userdata('open', $open);
-            $this->User_model->tambahQuestion();
+            $this->Faq_model->tambahQuestion();
             redirect('user/index');
         }
 	}	

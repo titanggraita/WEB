@@ -12,76 +12,22 @@ class C_login extends CI_Controller {
 
     public function index()
     {
-        // if ($this->session->userdata('Username')) {
-		// 	redirect('user');
-		// }
-		// $this->form_validation->set_rules('Username', 'Username', 'required');
-		// $this->form_validation->set_rules('Password', 'Password', 'required');
-		// if ($this->form_validation->run() == false) {
 			$data['title'] = "login";
 			$this->load->view('templates/header', $data);
-			$this->load->view('Login');
+			$this->load->view('Login', $data);
 			$this->load->view('templates/footer');
-		// } else {
-		// 	$this->_login();
-		// }
     }
-    // public function _login()
-	// {
-	// 	if ($this->session->userdata('Username')) {
-	// 		redirect('user');
-	// 	}
-	// 	$Username = $this->input->post("Username", true);
-	// 	$password = $this->input->post("password", true);
-
-	// 	$user = $this->db->get_where('user', ["Username" => $Username])->row_array();
-
-	// 	if ($user) {
-	// 		if ($user["Aktivasi"] == "T") {
-	// 			if (password_verify($Password, $user["Password"])) {
-	// 				$data = [
-	// 					"Username" => $Username,
-	// 					"ID_level" => $user["ID_level"]
-	// 				];
-	// 				$this->session->set_userdata($data);
-	// 				if ($user["ID_level"] == 1) {
-	// 					redirect("C_Admin");
-	// 				} else if($user["ID_level"] == 2) {
-	// 					redirect("C_Admin/kontributor");
-	// 				}else{
-    //                     redirect("user");
-    //                 }
-	// 			} else {
-	// 				$this->session->set_flashdata('message', '<div class="alert alert-danger " role="alert">Email or password is invalid</div>');
-	// 				redirect("C_login");
-	// 			}
-	// 		} else {
-	// 			$this->session->set_flashdata('message', '<div class="alert alert-danger " role="alert">Your account is not active</div>');
-	// 			redirect("C_login");
-	// 		}
-	// 	} else {
-	// 		$this->session->set_flashdata('message', '<div class="alert alert-danger " role="alert">
-	// 		Email or password is invalid
-	// 	  </div>');
-	// 		redirect("C_login");
-	// 	}
-	// }
-
-	// public function log_in()
-	// {
-    //     $cek = $this->User_model->login_check();
-    //     if ($cek>0) {
-    //         $login = [
-    //             "Username"=>$this->input->post("Username",true)
-    //         ];
-    //         $this->session->set_userdata("login", $login);
-    //         redirect("user");
-    //     } else {
-    //         redirect("user");
-    //     }
-        
-    // }
-    
+    public function Login()
+    {
+        $cek=$this->User_model->login_check();
+            if($cek['ID_level']=='1'){ //Akses admin
+                redirect('C_Admin');
+            }else if ($cek['ID_level']=='2'){ //akses kontributor
+                redirect('C_kontributor');
+            }else{ //akses public
+                redirect('user/public');
+            }        
+    }
     
     public function register()
     {
@@ -116,3 +62,4 @@ class C_login extends CI_Controller {
 		redirect("user");
 	}
 }
+?>
