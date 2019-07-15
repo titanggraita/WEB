@@ -4,8 +4,6 @@
 }
 .img-brand{
     width: 75px;
-    margin-top:20px;
-    margin-bottom: -12px;
 }
 .img-brand1{
     width: 300px;
@@ -42,9 +40,6 @@ body {
     color: whitesmoke;
   }
 
-  html {
-    margin: 40px auto;
-  }
   .btn-search {
         background: #EEE8AA;
         border-radius: 50px;
@@ -52,8 +47,6 @@ body {
         border-width: 1px;
         border-style: solid;
         border-color:#3AAFA9;
-        margin-right: 150px;
-        margin-left: 5px;
       }
       .btn-search:link, .btn-search:visited {
         color: #3AAFA9;
@@ -111,17 +104,7 @@ body {
   position: center;
   overflow: hidden;
 }
-#box_kategori{
-  width:250px;
-  height:150px;
-  background:#EEE8AA;
-  border:solid 1px rgb(58,175,169);
-  margin-top: 100px;
-  margin-bottom: 60px;
-  margin-left: 380px;
-  position: center;
-  overflow: hidden;
-}
+
 .box2{
   width:500px;
   height:330px;
@@ -133,9 +116,7 @@ body {
   position: center;
   overflow: hidden;
 }
-.text-center{
-  color:#3AAFA9;
-}
+
 .sidebar {
   height: 100%;
   width: 160px;
@@ -171,6 +152,7 @@ body {
   border-radius: 10px;
   margin-top: 5px;
 }
+
 
 @media screen and (max-height: 450px) {
   .sidebar {padding-top: 15px;}
