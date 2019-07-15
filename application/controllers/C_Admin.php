@@ -121,7 +121,7 @@ class C_Admin extends CI_Controller {
 				redirect('C_admin/lihat_question');
 			}else{
 				$this->load->view('templates/header',$data);
-				$this->load->view('answer_question',$data); //belum buat viewnya
+				$this->load->view('answer_question',$data);
 				$this->load->view('templates/footer');
 			}
 		}
@@ -142,17 +142,14 @@ class C_Admin extends CI_Controller {
 			if(!isset($id)) redirect('C_Admin/index');
 			$this->form_validation->set_rules('pertanyaan','pertanyaan', 'required');
         	$this->form_validation->set_rules('jawaban','jawaban', 'required');
-        	$this->form_validation->set_rules('keyword','keyword', 'required');
-        	$this->form_validation->set_rules('author', 'author', 'required');
-        	$this->form_validation->set_rules('status', 'status','required');
 
 			$data['faq'] = $this->Faq_model->getFaqById($id);
 			if ($this->form_validation->run()){
 				$this->Faq_model->ubahDataFaq($id);
-				redirect('C_Admin/lihat_question');
+				redirect('C_kontributor/lihat_questionKontributor');
 			}else{
 				$this->load->view('templates/header',$data);
-				$this->load->view('ubah_faq',$data);
+				$this->load->view('ubah_faq_kontributor',$data);
 				$this->load->view('templates/footer');
 			}
 		}
