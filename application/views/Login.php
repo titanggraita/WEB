@@ -13,15 +13,15 @@
 </nav>
 <div id="box1" style="margin-top:195px;">
             <div class="p-4">    
-                <form action="" method="POST">
+                <form action="<?= base_url()?>C_login/Login" method="POST">
                     <div class="form-group">
                         <p style="color:#3AAFA9;font-size:30px; margin-left:180px;">LOGIN</p>
                         <a style="color:#3AAFA9;">Username :</a> <input type="text" class="form-control" id="uname" placeholder="Username" name="Username">
                     </div>
                     <div class="form-group">
-                    <a style="color:#3AAFA9;">Password :</a><input type="password" class="form-control" id="pwd" placeholder="Password" name="password">
+                    <a style="color:#3AAFA9;">Password :</a><input type="password" class="form-control" id="pwd" placeholder="Password" name="Password">
                     </div>
-                    <button type="submit" class="btn btn-block" style="background-color:#3AAFA9; color: #EEE88A;">Login</button>
+                    <a href="<?=base_url()?>C_login/Login"><button type="submit" class="btn btn-block" style="background-color:#3AAFA9; color: #EEE88A;">Login</button></a>
                 </form>
                 <a href="<?=base_url()?>user/forgot_password" class="text-info float-right">Forgot password?</a><br>
                 <a href="<?=base_url()?>C_login/register" class="text-info float-right">Create account?</a>               

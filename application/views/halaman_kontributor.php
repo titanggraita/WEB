@@ -40,13 +40,13 @@ body {font-family: "Lato", sans-serif;}
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-nav fixed-top">
-  <a class="navbar-brand" style="margin-left:50px;margin-top:-30px;" href="<?= base_url() ?>user"><img src="<?= base_url() ?>assets/gambar/batan1.png" class="img-brand"></a>
+  <a class="navbar-brand" style="margin-left:50px;margin-top:-30px;" href="<?= base_url() ?>C_kontributor"><img src="<?= base_url() ?>assets/gambar/batan1.png" class="img-brand"></a>
   <div class="row">
       <h4 style="color:#EEE8AA; margin-left:30px;margin-top:10px;">Welcome, kontributor!</h4>
     <div class="topnav" style="margin-left:480px;font-size:15px;">
-      <a href="<?=base_url()?>C_Admin/kontributor"><i class="fa fa-fw fa-home fa-lg fa-2x"></i>Home</a>
-      <a href="<?=base_url()?>"><i class="fa fa-fw fa-envelope fa-lg"></i> Message</a>
+      <a href="<?=base_url()?>C_kontributor/index"><i class="fa fa-fw fa-home fa-lg fa-2x"></i>Home</a>
       <a href="<?=base_url()?>" style="margin-left:-10px;"><i class="fa fa-fw fa-user fa-lg"></i>Profile</a>
+      <a href="<?=base_url()?>C_login/logout"><i class="fa fa-fw fa-sign-out"></i> Sign Out</a>
     </div>
   </div>
   <div style="margin-bottom:100px;"></div>
@@ -57,7 +57,7 @@ body {font-family: "Lato", sans-serif;}
   <br>
   <a href="<?=base_url()?>C_Admin/kontributor"><i class="fa fa-fw fa-tachometer"></i> Dashboard</a><br>
   <a href="#"><i class="fa fa-fw fa-question-circle"></i> Question</a><br>
-  <a href="<?=base_url()?>C_login/logout"><i class="fa fa-fw fa-sign-out"></i> Sign Out</a>
+  
   
 </div>
 

@@ -63,34 +63,26 @@ body {font-family: "Lato", sans-serif;}
   <a href="<?=base_url()?>C_login/logout"><i class="fa fa-fw fa-sign-out"></i> Sign Out</a> 
 </div>
 
-<div id="box" style="margin-left:450px;">
+<div id="boxF" style="margin-left:450px;">
             <div class="p-4">    
                 <form action="" method="POST">
                     <div class="form-group">
                         <p style="color:#3AAFA9;font-size:30px; margin-left:150px;">UBAH DATA</p>
-                        <a style="color:#3AAFA9;">Username :</a><input type="text" class="form-control" id="username" placeholder="Username" name="Username" value="<?php echo $user->Username ?>">
+                        <a style="color:#3AAFA9;">Pertanyaan :</a><input type="text" class="form-control" id="pertanyaan" placeholder="pertanyaan" name="pertanyaan" value="<?php echo $faq->pertanyaan ?>">
                     </div>
                     <div class="form-group">
-                        <a style="color:#3AAFA9;">Password :</a><input type="password" class="form-control" id="pwd" placeholder="Password" name="Password" value="<?php echo $user->Password ?>">
+                        <a style="color:#3AAFA9;">Jawaban :</a><input type="text" class="form-control" id="jawaban" placeholder="jawaban" name="jawaban" value="<?php echo $faq->jawaban ?>">
                     </div>
                     <div class="form-group">
-                        <a style="color:#3AAFA9;">Email :</a><input type="email" class="form-control" id="email" placeholder="Email" name="Email" value="<?php echo $user->Email ?>">
+                        <a style="color:#3AAFA9;">Keyword :</a><input type="text" class="form-control" id="keyword" placeholder="keyword" name="keyword" value="<?php echo $faq->keyword ?>">
                     </div>
                     <div class="form-group">
-                        <a style="color:#3AAFA9;">Nama :</a><input type="text" class="form-control" id="nama" placeholder="Nama" name="Nama" value="<?php echo $user->Nama ?>">
+                        <a style="color:#3AAFA9;">Author :</a><input type="text" class="form-control" id="author" placeholder="author" name="author" value="<?php echo $faq->author ?>">
                     </div>
                     <div class="form-group">
-                        <a style="color:#3AAFA9;">Institution :</a><input type="text" class="form-control" id="institusi" placeholder="Institution" name="Institution" value="<?php echo $user->Institution ?>">
+                      <a style="color:#3AAFA9;">Status :</a><input type="text" class="form-control" id="status" placeholder="status" name="status" value="<?php echo $faq->status ?>">
                     </div>
-                    <div class="form-group">
-                        <a style="color:#3AAFA9;">Job :</a><input type="text" class="form-control" id="job" placeholder="Job" name="Job" value="<?php echo $user->Job ?>">
-                    </div>
-                    <div class="form-group">
-                        <a style="color:#3AAFA9;">Province :</a><input type="text" class="form-control" id="lokasi" placeholder="Province" name="Province" value="<?php echo $user->Province ?>">
-                    </div>
-                    <div class="form-group">
-                        <a style="color:#3AAFA9;">State :</a><input type="text" class="form-control" id="negara" placeholder="State" name="State" value="<?php echo $user->State ?>">
-                    </div>
+                    
                     <button type="submit" class="btn btn-block" style="background-color:#3AAFA9; color: #EEE88A;">Submit</button>
                 </form>
             </div>

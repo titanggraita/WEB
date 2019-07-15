@@ -45,8 +45,8 @@ body {font-family: "Lato", sans-serif;}
       <h4 style="color:#EEE8AA; margin-left:30px;margin-top:10px;">Welcome, Admin!</h4>
     <div class="topnav" style="margin-left:550px;font-size:15px;">
       <a href="<?=base_url()?>C_Admin/index"><i class="fa fa-fw fa-home fa-lg fa-2x"></i>Home</a>
+      <a href="<?=base_url()?>"><i class="fa fa-fw fa-envelope fa-lg"></i> Message</a>
       <a href="<?=base_url()?>" style="margin-left:-10px;"><i class="fa fa-fw fa-user fa-lg"></i>Profile</a>
-      <a href="<?=base_url()?>C_login/logout"><i class="fa fa-fw fa-sign-out"></i> Sign Out</a>
     </div>
   </div>
   <div style="margin-bottom:100px;"></div>
@@ -58,28 +58,26 @@ body {font-family: "Lato", sans-serif;}
   <a href="<?=base_url()?>C_Admin/index""><i class="fa fa-fw fa-tachometer"></i> Dashboard</a><br>
   <a href="<?=base_url()?>C_Admin/lihat_user"><i class="fa fa-fw fa-users"></i> User</a><br>
   <a href="<?=base_url()?>C_Admin/lihat_kontributor"><i class="fa fa-fw fa-users"></i> Contributor</a><br>
-  <a href="<?=base_url()?>C_Admin/lihat_question""><i class="fa fa-fw fa-question-circle"></i> Question</a><br>
+  <a href="<?=base_url()?>C_Admin/lihat_question"><i class="fa fa-fw fa-question-circle"></i> Question</a><br>
   <a href="<?=base_url()?>C_Admin/lihat_category"><i class="fa fa-fw fa-bookmark"></i> Category</a><br>
-   
+  <a href="<?=base_url()?>C_login/logout"><i class="fa fa-fw fa-sign-out"></i> Sign Out</a> 
 </div>
 
-  <center style="margin-top:100px;"><h4>DATA KATEGORI</h4></center><br>
-	<center><table style="margin:20px auto;" border="1" cellspacing="7" cellpadding="7">
-		<tr>
-			<th>No</th>
-			<th>Nama Kategori</th>
-		</tr>
-		<?php 
-		$no = 1;
-		foreach($kategori as $k){ 
-		?>
-		<tr>
-			<td><?php echo $no++ ?></td>
-			<td><?php echo $k['Nama_kategori'];?></td>
-		</tr>
-		<?php } ?>
-	</table>
-  </center>
+<div id="boxAOP" style="margin-left:450px;">
+            <div class="p-4">    
+                <form action="" method="POST">
+                    <div class="form-group">
+                        <p style="color:#3AAFA9;font-size:30px; margin-left:150px;">FORM FAQ</p>
+                        <a style="color:#3AAFA9;">Pertanyaan :</a><input type="text" class="form-control" id="pertanyaan" placeholder="pertanyaan" name="pertanyaan" value="<?php echo $OP->pertanyaan ?>" readonly>
+                    </div>
+                    <div class="form-group">
+                        <a style="color:#3AAFA9;">Jawaban :</a><input type="text" class="form-control" id="jawaban" placeholder="jawaban" name="jawaban">
+                    </div>
+                    <button type="submit" class="btn btn-block" style="background-color:#3AAFA9; color: #EEE88A;">Submit</button>
+                </form>
+            </div>
+        </div>
+
 
 
      

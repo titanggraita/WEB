@@ -58,7 +58,7 @@ body {font-family: "Lato", sans-serif;}
   <a href="<?=base_url()?>C_Admin/index""><i class="fa fa-fw fa-tachometer"></i> Dashboard</a><br>
   <a href="<?=base_url()?>C_Admin/lihat_user"><i class="fa fa-fw fa-users"></i> User</a><br>
   <a href="<?=base_url()?>C_Admin/lihat_kontributor"><i class="fa fa-fw fa-users"></i> Contributor</a><br>
-  <a href="#"><i class="fa fa-fw fa-question-circle"></i> Question</a><br>
+  <a href="<?=base_url()?>C_Admin/lihat_question"><i class="fa fa-fw fa-question-circle"></i> Question</a><br>
   <a href="<?=base_url()?>C_Admin/lihat_category"><i class="fa fa-fw fa-bookmark"></i> Category</a><br>
   <a href="<?=base_url()?>C_login/logout"><i class="fa fa-fw fa-sign-out"></i> Sign Out</a> 
 </div>
