@@ -23,35 +23,35 @@
 
 </nav>
 <div id="box" style="margin-top:50px;">
-            <div class="p-4">    
-                <form action="" method="POST">
-                    <div class="form-group">
-                        <p style="color:#3AAFA9;font-size:30px; margin-left:180px;">Register</p>
-                        <a style="color:#3AAFA9;">Username :</a><input type="text" class="form-control" id="username" placeholder="Username" name="Username">
-                    </div>
-                    <div class="form-group">
-                    <a style="color:#3AAFA9;">Password :</a><input type="password" class="form-control" id="pwd" placeholder="Password" name="Password">
-                    </div>
-                    <div class="form-group">
-                    <a style="color:#3AAFA9;">Email :</a><input type="email" class="form-control" id="email" placeholder="Email" name="Email">
-                    </div>
-                    <div class="form-group">
-                    <a style="color:#3AAFA9;">Nama :</a><input type="text" class="form-control" id="nama" placeholder="Nama" name="Nama">
-                    </div>
-                    <div class="form-group">
-                    <a style="color:#3AAFA9;">Institution :</a><input type="text" class="form-control" id="institusi" placeholder="Institution" name="Institution">
-                    </div>
-                    <div class="form-group">
-                    <a style="color:#3AAFA9;">Job :</a><input type="text" class="form-control" id="job" placeholder="Job" name="Job">
-                    </div>
-                    <div class="form-group">
-                    <a style="color:#3AAFA9;">Province :</a><input type="text" class="form-control" id="lokasi" placeholder="Province" name="Province">
-                    </div>
-                    <div class="form-group">
-                    <a style="color:#3AAFA9;">State :</a><input type="text" class="form-control" id="negara" placeholder="State" name="State">
-                    </div>
-                    <button type="submit" class="btn btn-block" style="background-color:#3AAFA9; color: #EEE88A;">Register</button>
-                </form>
-                <a href="<?=base_url()?>C_login/index" class="text-info float-right">Already have an account?</a>
-            </div>
-        </div>
+  <div class="p-4">
+    <form action="" method="POST">
+      <div class="form-group">
+        <p style="color:#3AAFA9;font-size:30px; margin-left:180px;">Register</p>
+        <a style="color:#3AAFA9;">Username :</a><input type="text" class="form-control" id="username" placeholder="Username" name="Username">
+      </div>
+      <div class="form-group">
+        <a style="color:#3AAFA9;">Password :</a><input type="password" class="form-control" id="pwd" placeholder="Password" name="Password">
+      </div>
+      <div class="form-group">
+        <a style="color:#3AAFA9;">Email :</a><input type="email" class="form-control" id="email" placeholder="Email" name="Email">
+      </div>
+      <div class="form-group">
+        <a style="color:#3AAFA9;">Nama :</a><input type="text" class="form-control" id="nama" placeholder="Nama" name="Nama">
+      </div>
+      <div class="form-group">
+        <a style="color:#3AAFA9;">Institution :</a><input type="text" class="form-control" id="institusi" placeholder="Institution" name="Institution">
+      </div>
+      <div class="form-group">
+        <a style="color:#3AAFA9;">Job :</a><input type="text" class="form-control" id="job" placeholder="Job" name="Job">
+      </div>
+      <div class="form-group">
+        <a style="color:#3AAFA9;">Province :</a><input type="text" class="form-control" id="lokasi" placeholder="Province" name="Province">
+      </div>
+      <div class="form-group">
+        <a style="color:#3AAFA9;">State :</a><input type="text" class="form-control" id="negara" placeholder="State" name="State">
+      </div>
+      <button type="submit" class="btn btn-block" style="background-color:#3AAFA9; color: #EEE88A;">Register</button>
+    </form>
+    <a href="<?= base_url() ?>C_login/index" class="text-info float-right">Already have an account?</a>
+  </div>
+</div>

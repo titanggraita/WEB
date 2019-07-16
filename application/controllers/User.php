@@ -59,6 +59,12 @@ class User extends CI_Controller
 	
 	public function Open_question()
 	{
+		if (condition) {
+			# code...
+		} else {
+			# code...
+		}
+		
 		$this->form_validation->set_rules('username','username', 'required');
         $this->form_validation->set_rules('pertanyaan','pertanyaan', 'required');
 
@@ -78,4 +84,3 @@ class User extends CI_Controller
         }
 	}	
 }
-?>
