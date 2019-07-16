@@ -70,7 +70,7 @@
 				"username" => $this->input->post('username', true),
 				"pertanyaan" => $this->input->post('pertanyaan', true)
 			];
-			return $this->db->insert('open_question', $data);
+			$this->db->insert('open_question', $data);
 		}
 		public function ubahDataFaq($ID_faq){
 			$data = [
@@ -106,6 +106,16 @@
 			$this->db->where('ID_question',$ID_question);
 			$this->db->insert('faq',$data);
 		}
+		// public function assignContributor($id)
+		// {
+		// 	$data = [
+		// 		"pertanyaan" => $this->input->post('pertanyaan', true),
+		// 		"user" => $this->input->post('user', true),
+        //     	"kompetensi" => $this->input->post('kompetensi', true)
+		// 	];
+		// 	$this->db->where('ID_question',$id);
+		// 	$this->db->insert('question_assigned_to_contributor',$data);
+		// }
 		
 		public function tambahFaqKontributor(){
 			$data = [
