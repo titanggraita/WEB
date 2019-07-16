@@ -1,17 +1,28 @@
-<nav class="navbar navbar-expand-lg bg-nav fixed-top">
-  <a class="navbar-brand" style="margin-left:50px; margin-bottom:98px;" href="<?= base_url() ?>user"><img src="<?= base_url() ?>assets/gambar/batan1.png" class="img-brand"></a>
-  <div class="row" >
-    <h4 style="color:#EEE8AA; margin-left:20px;margin-bottom:40px;">FAQ SYSTEM</h4>
-    <div class="topnav-lain topnav">
-      <a href="<?=base_url()?>user/index" class="active">Home</a>
-      <a href="<?=base_url()?>user/about">About</a>
-      <a href="<?=base_url()?>user/policies">Policies</a>
-      <a href="<?=base_url()?>user/contact">Contact Us</a> 
-    </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-nav py-3">
+  <a class="navbar-brand" style="color:#EEE8AA;" href="<?= base_url() ?>user"><img src="<?= base_url() ?>assets/gambar/batan1.png" class="img-brand mr-3"> FAQ SYSTEM</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link active" href="<?= base_url() ?>user/index">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?= base_url() ?>user/about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?= base_url() ?>user/policies">Policies</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?= base_url() ?>user/contact">Contact Us</a>
+      </li>
+    </ul>
   </div>
-  <div style="margin-top:100px;"></div>
+
 </nav>
-<div id="box" style="margin-top:220px;">
+<div id="box" style="margin-top:50px;">
             <div class="p-4">    
                 <form action="" method="POST">
                     <div class="form-group">

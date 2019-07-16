@@ -63,7 +63,7 @@ body {font-family: "Lato", sans-serif;}
   
 </div>
 
-  <center style="margin-top:100px;margin-left:147px;"><h4>DATA OPEN QUESTION</h4></center><br>
+  <center style="margin-top:150px;margin-left:147px;"><h4>DATA OPEN QUESTION</h4></center><br>
   <center><table style="margin:20px auto;margin-left:168px;" border="1" cellspacing="7" cellpadding="7">
 		<tr>
 			<th>No</th>
@@ -87,7 +87,7 @@ body {font-family: "Lato", sans-serif;}
       <td><?php echo $q['pertanyaan'];?></td>
       <td><?php echo $q['jawaban'];?></td>
             <td><?php echo anchor('C_Admin/AnswerOP/'.$q['ID_question'],'Answer'); ?></td>
-            <td><?php echo anchor(''.$q['ID_question'],'Assigned to contributor'); ?></td>
+            <td><?php echo anchor('#'.$q['ID_question'],'Assigned to contributor'); ?></td>
             <td><?php echo anchor('C_Admin/publishFaq/'.$q['ID_question'],'Publish'); ?></td>
             <td><?php echo anchor('C_Admin/hapus_Question/'.$q['ID_question'],'Hapus'); ?></td>
 			

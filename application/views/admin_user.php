@@ -63,7 +63,7 @@ body {font-family: "Lato", sans-serif;}
   
 </div>
 
-  <center style="margin-top:100px;margin-left:50px;"><h4>DATA USER [Public, Contributor, Admin]</h4></center><br>
+  <center style="margin-top:150px;margin-left:50px;"><h4>DATA USER [Public, Contributor, Admin]</h4></center><br>
   <center style="margin-left:30px;"><?php echo anchor('C_Admin/tambah','Tambah Data'); ?></center><br>
 	<center><table style="margin-top:20px;margin-left:160px;" border="1" cellspacing="7" cellpadding="7">
 		<tr>

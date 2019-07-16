@@ -74,7 +74,7 @@ body {font-family: "Lato", sans-serif;}
                         <a style="color:#3AAFA9;">Jawaban :</a><input type="text" class="form-control" id="jawaban" placeholder="jawaban" name="jawaban" value="<?php echo $faq->jawaban ?>">
                     </div>
                     <div class="form-group">
-                        <a style="color:#3AAFA9;">Kategori :</a><input type="text" class="form-control" id="kategori" placeholder="kategori" name="kategori">
+                        <a style="color:#3AAFA9;">Kategori :</a><input type="text" class="form-control" id="kategori" placeholder="kategori" name="kategori" value="<?php echo $faq->kategori ?>">
                     </div>
                     <div class="form-group">
                         <a style="color:#3AAFA9;">Keyword :</a><input type="text" class="form-control" id="keyword" placeholder="keyword" name="keyword" value="<?php echo $faq->keyword ?>">

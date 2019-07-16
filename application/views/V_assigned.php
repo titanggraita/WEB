@@ -11,7 +11,7 @@ body {font-family: "Lato", sans-serif;}
   left: 0;
   background-color: #EEE8AA;
   overflow-x: hidden;
-  padding-top: 16px;
+  <!-- padding-top: 16px; -->
   margin-top:100px;
 }
 
@@ -58,30 +58,31 @@ body {font-family: "Lato", sans-serif;}
   <a href="<?=base_url()?>C_Admin/index""><i class="fa fa-fw fa-tachometer"></i> Dashboard</a><br>
   <a href="<?=base_url()?>C_Admin/lihat_user"><i class="fa fa-fw fa-users"></i> User</a><br>
   <a href="<?=base_url()?>C_Admin/lihat_kontributor"><i class="fa fa-fw fa-users"></i> Contributor</a><br>
-  <a href="<?=base_url()?>C_Admin/lihat_question""><i class="fa fa-fw fa-question-circle"></i> Question</a><br>
+  <a href="<?=base_url()?>C_Admin/lihat_question"><i class="fa fa-fw fa-question-circle"></i> Question</a><br>
   <a href="<?=base_url()?>C_Admin/lihat_category"><i class="fa fa-fw fa-bookmark"></i> Category</a><br>
    
 </div>
 
-  <center style="margin-top:150px;"><h4>DATA KOMPETENSI KONTRIBUTOR</h4></center><br>
-	<center><table style="margin:20px auto;" border="1" cellspacing="7" cellpadding="7">
-		<tr>
-			<th>No</th>
-      <th>ID Kompetensi</th>
-			<th>Nama Bidang Kontributor</th>
-		</tr>
-		<?php 
-		$no = 1;
-		foreach($kontributor as $o){ 
-		?>
-		<tr>
-			<td><?php echo $no++ ?></td>
-      <td><?php echo $o['ID_kompetensi'];?></td>
-			<td><?php echo $o['Nama_kompetensi'];?></td>
-		</tr>
-		<?php } ?>
-	</table>
-  </center>
+<div id="boxAssign" style="margin-left:450px;margin-top:150px;">
+            <div class="p-4">    
+                <form action="" method="POST">
+                    <div class="form-group">
+                        <p style="color:#3AAFA9;font-size:30px; margin-left:120px;">FORM ASSIGNED</p>
+                        <a style="color:#3AAFA9;">Pertanyaan :</a><input type="text" class="form-control" id="pertanyaan" placeholder="pertanyaan" name="pertanyaan" value="<?php echo $assign->pertanyaan ?>" readonly>
+                    </div>
+                    <div class="form-group">
+                        <a style="color:#3AAFA9;">User :</a><input type="text" class="form-control" id="user" placeholder="username" name="username">
+                    </div>
+                    <div class="form-group">
+                        <a style="color:#3AAFA9;">Kompetensi :</a><input type="text" class="form-control" id="kompetensi" placeholder="kompetensi" name="kategori">
+                    </div>
+                    
+                    <button type="submit" name="submit" value="submit" class="btn btn-block" style="background-color:#3AAFA9; color: #EEE88A;">Submit</button>
+                </form>
+                
+            </div>
+        </div>
+
 
 
      

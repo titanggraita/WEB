@@ -45,7 +45,7 @@ body {font-family: "Lato", sans-serif;}
       <h4 style="color:#EEE8AA; margin-left:20px;margin-top:10px;">Welcome, Kontributor!</h4>
     <div class="topnav" style="margin-left:550px;font-size:15px;">
       <a href="<?=base_url()?>C_Admin/index"><i class="fa fa-fw fa-home fa-lg fa-2x"></i>Home</a>
-      <a href="<?=base_url()?>" style="margin-left:-10px;"><i class="fa fa-fw fa-user fa-lg"></i>Profile</a>
+      <a href="#" style="margin-left:-10px;"><i class="fa fa-fw fa-user fa-lg"></i>Profile</a>
       <a href="<?=base_url()?>C_login/logout"><i class="fa fa-fw fa-sign-out"></i> Sign Out</a>
     </div>
   </div>
@@ -60,7 +60,7 @@ body {font-family: "Lato", sans-serif;}
   
 </div>
 
-  <center style="margin-top:100px;margin-left:150px;"><h4>DATA QUESTION & ANSWER</h4></center><br>
+  <center style="margin-top:150px;margin-left:150px;"><h4>DATA QUESTION & ANSWER</h4></center><br>
   <center style="margin-left:150px;"><?php echo anchor('C_kontributor/tambah/','Tambah Pertanyaan'); ?></center><br>
   <center><table style="margin:20px auto;margin-left:420px;" border="1" cellspacing="7" cellpadding="7">
 		<tr>

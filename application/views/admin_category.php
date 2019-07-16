@@ -63,7 +63,7 @@ body {font-family: "Lato", sans-serif;}
    
 </div>
 
-  <center style="margin-top:100px;"><h4>DATA KATEGORI</h4></center><br>
+  <center style="margin-top:150px;"><h4>DATA KATEGORI</h4></center><br>
 	<center><table style="margin:20px auto;" border="1" cellspacing="7" cellpadding="7">
 		<tr>
 			<th>No</th>

@@ -1,18 +1,28 @@
-<nav class="navbar navbar-expand-lg bg-nav fixed-top">
-  <a class="navbar-brand" style="margin-left:50px;margin-top:-30px;" href="<?= base_url() ?>user"><img src="<?= base_url() ?>assets/gambar/batan1.png" class="img-brand"></a>
-  <div class="row">
-    <h4 style="color:#EEE8AA; margin-left:30px;margin-top:10px;">HASIL SEARCH</h4>
-    <div class="topnav" style="margin-left:550px;font-size:15px;">
-      <a href="<?= base_url() ?>user/index" class="active">Home</a>
-      <a href="<?= base_url() ?>user/about">About</a>
-      <a href="<?= base_url() ?>user/policies">Policies</a>
-      <a href="<?= base_url() ?>user/contact">Contact Us</a>
-    </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-nav py-3">
+  <a class="navbar-brand" style="color:#EEE8AA;" href="<?= base_url() ?>user"><img src="<?= base_url() ?>assets/gambar/batan1.png" class="img-brand mr-3"> FAQ SYSTEM</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link active" href="<?= base_url() ?>user/index">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?= base_url() ?>user/about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?= base_url() ?>user/policies">Policies</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?= base_url() ?>user/contact">Contact Us</a>
+      </li>
+    </ul>
   </div>
-  <div style="margin-bottom:100px;"></div>
-  <hr>
+
 </nav>
-<div class="container-fluid px-5 py-2" style="margin-top:120px;">
+<div class="container-fluid px-5 py-2" style="margin-top:40px;">
   <form action="<?= base_url('c_faq/search') ?>" method="POST">
     <div class="input-group">
       <input type="text" class="form-control" style="border-radius:40px;" placeholder="Search for articles ..." name="keyword">
