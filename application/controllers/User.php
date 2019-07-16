@@ -7,6 +7,7 @@ class User extends CI_Controller
 		parent::__construct();
 		$this->load->helper('url_helper');
 		$this->load->model('User_model');
+		$this->load->model('Faq_model');
 		$this->load->model('Kategori_model');
 		$this->load->library('form_validation');
 		$this->load->library('session');
@@ -55,24 +56,26 @@ class User extends CI_Controller
 		$this->load->view('Forgot_password', $data);
 		$this->load->view('templates/footer');
 	}
+	
 	public function Open_question()
 	{
-		$this->form_validation->set_rules('username', 'username', 'required');
-		$this->form_validation->set_rules('pertanyaan', 'pertanyaan', 'required');
+		$this->form_validation->set_rules('username','username', 'required');
+        $this->form_validation->set_rules('pertanyaan','pertanyaan', 'required');
 
-		if ($this->form_validation->run() == FALSE) {
-			$data['title'] = "FAQ - BATAN - Open question";
-			$this->load->view('templates/header', $data);
-			$this->load->view('Open_question');
-			$this->load->view('templates/footer');
-		} else {
-			$open = [
-				"username" => $this->input->post('username', true),
-				"pertanyaan" => $this->input->post('pertanyaan', true),
-			];
-			$this->session->set_userdata('open', $open);
-			$this->Faq_model->tambahQuestion();
-			redirect('user/index');
-		}
-	}
+        if ($this->form_validation->run() == FALSE){
+            $data['title'] = "FAQ - BATAN - Open question";
+            $this->load->view('templates/header',$data);
+            $this->load->view('Open_question');
+            $this->load->view('templates/footer');
+        }else{
+            $open = [
+                "username" => $this->input->post('username', true),
+                "pertanyaan" => $this->input->post('pertanyaan', true),
+            ];
+            $this->session->set_userdata('open', $open);
+            $this->Faq_model->tambahQuestion();
+            redirect('user/index');
+        }
+	}	
 }
+?>
