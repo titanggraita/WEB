@@ -60,6 +60,8 @@ class C_login extends CI_Controller
 
         if ($this->form_validation->run() == FALSE) {
             $data['title'] = "FAQ - BATAN - Register";
+            $data['provinsi'] = $this->User_model->getAllProvinsi();
+            $data['negara'] = $this->User_model->getAllNegara();
             $this->load->view('templates/header', $data);
             $this->load->view('Register');
             $this->load->view('templates/footer');
@@ -71,7 +73,8 @@ class C_login extends CI_Controller
                 "Nama" => $this->input->post('Nama', true),
                 "Institution" => $this->input->post('Institution', true),
                 "Job" => $this->input->post('Job', true),
-                "Province" => $this->input->post('Province', true)
+                "Province" => $this->input->post('Province', true),
+                "State" => $this->input->post('State', true)
             ];
             $this->User_model->tambahUser();
             $this->session->set_userdata('user', $login);

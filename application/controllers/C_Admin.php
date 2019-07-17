@@ -68,6 +68,8 @@ class C_Admin extends CI_Controller {
         	$this->form_validation->set_rules('Province', 'Province', 'required');
         	$this->form_validation->set_rules('State', 'State', 'required');
 
+			$data['provinsi'] = $this->User_model->getAllProvinsi();
+           	$data['negara'] = $this->User_model->getAllNegara();
 			if ($this->form_validation->run()){
 				$this->User_model->tambahContributor();
 				redirect('C_Admin/lihat_user');
@@ -90,6 +92,8 @@ class C_Admin extends CI_Controller {
         	$this->form_validation->set_rules('Province', 'Province', 'required');
         	$this->form_validation->set_rules('State', 'State', 'required');
 
+			$data['provinsi'] = $this->User_model->getAllProvinsi();
+           	$data['negara'] = $this->User_model->getAllNegara();
 			$data['user'] = $this->User_model->getUserById($id);
 			if ($this->form_validation->run()){
 				$this->User_model->ubahDataUser($id);
