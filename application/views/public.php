@@ -28,7 +28,7 @@
   </div>
 
 </nav>
-<div class="bg-nav text-center py-5">
+<div class="bg-nav text-center py-4">
   <p style="color:#EEE8AA; font-size:18px;">How can we help you today?</p>
   <div class="container">
     <div class="row">
@@ -53,9 +53,9 @@
       ?>
       <div class="col-lg-4 mt-1">
         <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"><?php echo $data['Nama_kategori']; ?></h5>
-            <p class="card-text"><?= $jml['jumlah'] ?> articles</p>
+          <div class="card-body" style="background-color:#EEE8AA;">
+            <h5 class="card-title" style="color:#3AAFA9"><?php echo $data['Nama_kategori']; ?></h5>
+            <p class="card-text" style="color:#3AAFA9"><?= $jml['jumlah'] ?> articles</p>
             <a href="<?= base_url('c_faq/search') ?>" class="btn btn-primary bg-nav" style="color:#EEE8AA;">Go To Question</a>
           </div>
         </div>

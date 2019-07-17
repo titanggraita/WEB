@@ -61,9 +61,9 @@
       ?>
       <div class="col-lg-4 mt-1">
         <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"><?php echo $data['Nama_kategori']; ?></h5>
-            <p class="card-text"><?= $jml['jumlah'] ?> articles</p>
+          <div class="card-body" style="background-color:#EEE8AA;">
+            <h5 class="card-title" style="color:#3AAFA9;"><?php echo $data['Nama_kategori']; ?></h5>
+            <p class="card-text" style="color:#3AAFA9"><?= $jml['jumlah'] ?> articles</p>
             <a href="#" class="btn btn-primary bg-nav" style="color:#EEE8AA;">Go To Question</a>
           </div>
         </div>
