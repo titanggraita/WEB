@@ -93,6 +93,17 @@ body {
   position: center;
   overflow: hidden;
 }
+#boxAssign{
+  width:500px;
+  height:400px;
+  background:#EEE8AA;
+  border:solid 1px rgb(58,175,169);
+  margin-top: 100px;
+  margin-bottom: 60px;
+  margin-left: 380px;
+  position: center;
+  overflow: hidden;
+}
 #boxpilihan{
   width:500px;
   height:230px;
@@ -111,6 +122,29 @@ body {
   background:#EEE8AA;
   border:solid 1px rgb(58,175,169);
   margin-top: 200px;
+  margin-bottom: 60px;
+  margin-left: 380px;
+  position: center;
+  overflow: hidden;
+}
+#boxF{
+  width:500px;
+  height:630px;
+  background:#EEE8AA;
+  border:solid 1px rgb(58,175,169);
+  margin-top: 130px;
+  margin-bottom: 60px;
+  margin-left: 380px;
+  position: center;
+  overflow: hidden;
+}
+
+#boxAOP{
+  width:500px;
+  height:330px;
+  background:#EEE8AA;
+  border:solid 1px rgb(58,175,169);
+  margin-top: 150px;
   margin-bottom: 60px;
   margin-left: 380px;
   position: center;
