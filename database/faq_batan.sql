@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 15, 2019 at 05:24 PM
+-- Generation Time: Jul 17, 2019 at 02:21 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -25,6 +25,216 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `daftar_negara`
+--
+
+CREATE TABLE `daftar_negara` (
+  `ID_negara` int(200) NOT NULL,
+  `Nama_negara` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `daftar_negara`
+--
+
+INSERT INTO `daftar_negara` (`ID_negara`, `Nama_negara`) VALUES
+(1, 'Afganistan'),
+(2, 'Afrika Selatan'),
+(3, 'Afrika Tengah'),
+(4, 'Albania'),
+(5, 'Aljazair'),
+(6, 'Amerika Serikat'),
+(7, 'Andorra'),
+(8, 'Angola'),
+(9, 'Antigua dan Barbuda'),
+(10, 'Arab Saudi'),
+(11, 'Argentina'),
+(12, 'Armenia'),
+(13, 'Australia'),
+(14, 'Austria'),
+(15, 'Azerbaijan'),
+(16, 'Bahama'),
+(17, 'Bahrain'),
+(18, 'Bangladesh'),
+(19, 'Barbados'),
+(20, 'Belanda'),
+(21, 'Belarus'),
+(22, 'Belgia'),
+(23, 'Belize'),
+(24, 'Benin'),
+(25, 'Bhutan'),
+(26, 'Bolivia'),
+(27, 'Bosnia dan Herzegovina'),
+(28, 'Botswana'),
+(29, 'Brasil'),
+(30, 'Britania Raya'),
+(31, 'Brunei Darussalam'),
+(32, 'Bulgaria'),
+(33, 'Burkina Faso'),
+(34, 'Burundi'),
+(35, 'Ceko'),
+(36, 'Chad'),
+(37, 'Chili'),
+(38, 'China'),
+(39, 'Denmark'),
+(40, 'Djibouti'),
+(41, 'Dominika'),
+(42, 'Ekuador'),
+(43, 'El Salvador'),
+(44, 'Eritrea'),
+(45, 'Estonia'),
+(46, 'Ethiopia'),
+(47, 'Fiji'),
+(48, 'Filipina'),
+(49, 'Finlandia'),
+(50, 'Gabon'),
+(51, 'Gambia'),
+(52, 'Georgia'),
+(53, 'Ghana'),
+(54, 'Grenada'),
+(55, 'Guatemala'),
+(56, 'Guinea'),
+(57, 'Guinea Bissau'),
+(58, 'Guinea Khatulistiwa'),
+(59, 'Guyana'),
+(60, 'Haiti'),
+(61, 'Honduras'),
+(62, 'Hongaria'),
+(63, 'India'),
+(64, 'Indonesia'),
+(65, 'Irak'),
+(66, 'Iran'),
+(67, 'Irlandia'),
+(68, 'Islandia'),
+(69, 'Israel'),
+(70, 'Italia'),
+(71, 'Jamaika'),
+(72, 'Jepang'),
+(73, 'Jerman'),
+(74, 'Kamboja'),
+(75, 'Kamerun'),
+(76, 'Kanada'),
+(77, 'Kazakhstan'),
+(78, 'Kenya'),
+(79, 'Kirgizstan'),
+(80, 'Kiribati'),
+(81, 'Kolombia'),
+(82, 'Komoro'),
+(83, 'Republik Kongo'),
+(84, 'Korea Selatan'),
+(85, 'Korea Utara'),
+(86, 'Kosta Rika'),
+(87, 'Kroasia'),
+(88, 'Kuba'),
+(89, 'Kuwait'),
+(90, 'Laos'),
+(91, 'Latvia'),
+(92, 'Lebanon'),
+(93, 'Lesotho'),
+(94, 'Liberia'),
+(95, 'Libya'),
+(96, 'Liechtenstein'),
+(97, 'Lituania'),
+(98, 'Luksemburg'),
+(99, 'Madagaskar'),
+(100, 'Makedonia'),
+(101, 'Maladewa'),
+(102, 'Malawi'),
+(103, 'Malaysia'),
+(104, 'Mali'),
+(105, 'Malta'),
+(106, 'Maroko'),
+(107, 'Marshall'),
+(108, 'Mauritania'),
+(109, 'Mauritius'),
+(110, 'Meksiko'),
+(111, 'Mesir'),
+(112, 'Mikronesia'),
+(113, 'Moldova'),
+(114, 'Monako'),
+(115, 'Mongolia'),
+(116, 'Montenegro'),
+(117, 'Mozambik'),
+(118, 'Myanmar'),
+(119, 'Namibia'),
+(120, 'Nauru'),
+(121, 'Nepal'),
+(122, 'Niger'),
+(123, 'Nigeria'),
+(124, 'Nikaragua'),
+(125, 'Norwegia'),
+(126, 'Oman'),
+(127, 'Pakistan'),
+(128, 'Palau'),
+(129, 'Panama'),
+(130, 'Pantai Gading'),
+(131, 'Papua Nugini'),
+(132, 'Paraguay'),
+(133, 'Perancis'),
+(134, 'Peru'),
+(135, 'Polandia'),
+(136, 'Portugal'),
+(137, 'Qatar'),
+(138, 'Republik Demokratik Kongo'),
+(139, 'Republik Dominika'),
+(140, 'Rumania'),
+(141, 'Rusia'),
+(142, 'Rwanda'),
+(143, 'Saint Kitts and Nevis'),
+(144, 'Saint Lucia'),
+(145, 'Saint Vincent and the Grenadines'),
+(146, 'Samoa'),
+(147, 'San Marino'),
+(148, 'Sao Tome and Principe'),
+(149, 'Selandia Baru'),
+(150, 'Senegal'),
+(151, 'Serbia'),
+(152, 'Seychelles'),
+(153, 'Sierra Leone'),
+(154, 'Singapura'),
+(155, 'Siprus'),
+(156, 'Slovenia'),
+(157, 'Slowakia'),
+(158, 'Solomon'),
+(159, 'Somalia'),
+(160, 'Spanyol'),
+(161, 'Sri Lanka'),
+(162, 'Sudan'),
+(163, 'Sudan Selatan'),
+(164, 'Suriah'),
+(165, 'Suriname'),
+(166, 'Swaziland'),
+(167, 'Swedia'),
+(168, 'Swiss'),
+(169, 'Tajikistan'),
+(170, 'Tanjung Verde'),
+(171, 'Tanzania'),
+(172, 'Thailand'),
+(173, 'Timor Leste'),
+(174, 'Togo'),
+(175, 'Tonga'),
+(176, 'Trinidad and Tobago'),
+(177, 'Tunisia'),
+(178, 'Turki'),
+(179, 'Turkmenistan'),
+(180, 'Tuvalu'),
+(181, 'Uganda'),
+(182, 'Ukrania'),
+(183, 'Uni Emirat Arab'),
+(184, 'Uruguay'),
+(185, 'Uzbekistan'),
+(186, 'Vanuatu'),
+(187, 'Venezuela'),
+(188, 'Vietnam'),
+(189, 'Yaman'),
+(190, 'Yordania'),
+(191, 'Yunani'),
+(192, 'Zambia'),
+(193, 'Zimbabwe');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `faq`
 --
 
@@ -32,7 +242,7 @@ CREATE TABLE `faq` (
   `ID_faq` int(50) NOT NULL,
   `pertanyaan` varchar(200) NOT NULL,
   `jawaban` varchar(1000) NOT NULL,
-  `kategori` enum('Batan','Daur Bahan Bakar Nuklir dan Bahan Maju','Isotop dan Radiasi','Keselamatan dan Keamanan Nuklir','Reaktor Nuklir','Rekayasa Perangkat dan Fasilitas Nuklir') NOT NULL,
+  `kategori` enum('Batan','Bahan Bakar','Isotop dan Radiasi','Keselamatan dan Keamanan Nuklir','Reaktor Nuklir','Rekayasa Perangkat dan Fasilitas Nuklir') NOT NULL,
   `keyword` varchar(50) NOT NULL,
   `author` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
@@ -47,16 +257,16 @@ CREATE TABLE `faq` (
 
 INSERT INTO `faq` (`ID_faq`, `pertanyaan`, `jawaban`, `kategori`, `keyword`, `author`, `email`, `datecreated`, `dateupdated`, `status`) VALUES
 (1, 'Apasih BATAN itu?', 'BATAN adalah lembaga pemerintah non departemen yang melakukan penilitian dan pengembangan. BATAN berada di bawah Kementrian Negara Riset dan Teknologi, seperti juga BPPT, LIPI, BAPETEN, BSN, BAKOSURTANAL, LAPAN.', 'Batan', 'batan', 'Admin', '', '2019-07-02 06:38:13', '2019-07-02 06:38:13', 'active'),
-(2, 'Apa yang sudah dikembangkan oleh BATAN?', 'BATAN mengembangkan teknik nuklir untuk bidang pangan, energi, kesehatan & obat, diseminasi & teknologi informasi bidang nuklir.', 'Batan', 'batan', 'Admin', '', '2019-07-02 06:39:05', '2019-07-02 06:39:05', 'active'),
-(3, 'Apakah BATAN punya cabang di daerah?', 'BATAN tidak memiliki kantor cabang, namun BATAN memiliki fasilitas penelitian di berbagai kota. BATAN memiliki fasilitas di Pasar Jum\'at, Jakarta Selatan, di Pupiptek Serpong Tangerang, di Bandung (dekat ITB), di Jl. Babarsari, Sleman, Yogyakarta, dan di Ujungwatu, Jepara.', 'Batan', 'batan', 'Admin', '', '2019-07-02 06:43:03', '2019-07-02 06:43:03', 'active'),
-(4, 'Apakah BATAN sama dengan BAPETEN?', 'Berdasarkan UU No.10 Tahun 1997 tentang Ketenaganukliran, BATAN memiliki tugas penelitian dan pengembangan, penyelidikan umum, eksplorasi dan eksploitasi bahan galian nuklir, produksi bahan baku untuk pembuatan dan produksi bahan bakar nuklir, produksi radioisotop untuk keperluan penelitian dan pengembangan, dan pengelolaan limbah radioaktif. Sementara BAPETEN memiliki tugas pengaturan, perizinan, dan inspeksi. Dengan kata lain, BATAN yang melakukan litbang, BAPETEN yang melakukan pengawasan. Reaktor Nuklir BATAN selalu diinspeksi oleh BAPETEN.', 'Batan', 'batan, bapeten', 'Admin', '', '2019-07-02 06:47:33', '2019-07-02 06:47:33', 'active'),
+(2, 'Apa yang sudah dikembangkan oleh BATAN?', 'BATAN mengembangkan teknik nuklir untuk bidang pangan, energi, kesehatan & obat, diseminasi & teknologi informasi bidang nuklir.', 'Rekayasa Perangkat dan Fasilitas Nuklir', 'batan', 'Admin', '', '2019-07-02 06:39:05', '2019-07-02 06:39:05', 'active'),
+(3, 'Apakah BATAN punya cabang di daerah?', 'BATAN tidak memiliki kantor cabang, namun BATAN memiliki fasilitas penelitian di berbagai kota. BATAN memiliki fasilitas di Pasar Jum\'at, Jakarta Selatan, di Pupiptek Serpong Tangerang, di Bandung (dekat ITB), di Jl. Babarsari, Sleman, Yogyakarta, dan di Ujungwatu, Jepara.', 'Rekayasa Perangkat dan Fasilitas Nuklir', 'batan', 'Admin', '', '2019-07-02 06:43:03', '2019-07-02 06:43:03', 'active'),
+(4, 'Apakah BATAN sama dengan BAPETEN?', 'Berdasarkan UU No.10 Tahun 1997 tentang Ketenaganukliran, BATAN memiliki tugas penelitian dan pengembangan, penyelidikan umum, eksplorasi dan eksploitasi bahan galian nuklir, produksi bahan baku untuk pembuatan dan produksi bahan bakar nuklir, produksi radioisotop untuk keperluan penelitian dan pengembangan, dan pengelolaan limbah radioaktif. Sementara BAPETEN memiliki tugas pengaturan, perizinan, dan inspeksi. Dengan kata lain, BATAN yang melakukan litbang, BAPETEN yang melakukan pengawasan. Reaktor Nuklir BATAN selalu diinspeksi oleh BAPETEN.', 'Bahan Bakar', 'batan, bapeten', 'Admin', '', '2019-07-02 06:47:33', '2019-07-02 06:47:33', 'active'),
 (5, 'Apakah hubungan antara BATAN dan PLTN?', 'BATAN, bersama-sama dengan BPPT, Dept. ESDM, PLN dan instansi terkait lainnya serta dengan bantuan IAEA pada tahun 2001-2002, melakukan kajian dan perhitungan tentang layak-tidaknya PLTN dibangun dan dioperasikan di Indonesia pada sekitar tahun 2017.', 'Batan', 'batan, pltn, PLTN', 'Admin', '', '2019-07-02 06:57:44', '2019-07-02 06:57:44', 'active'),
 (6, 'Apakah BATAN mengembangkan senjata nuklir?', 'BATAN hanya mengembangkan dan meneliti nuklir untuk maksud-maksud damai, tidak untuk keperluan merusak, persenjataan ataupun kepentingan militer lainnya. BATAN menjadi salah satu penandatangan traktat NPT (Nuclear Non Proliferation Treaty) atau pakta untuk tidak menyebarluaskan senjata nuklir. Traktat itu sendiri mulai dirintis sejak 1 Juli 1968. Dari 180 lebih anggota Badan tenaga Nuklir Internasional (IAEA), hanya 4 negara yang tidak berpartisipasi dalam traktat ini. Negara tersebut adalah India, Israel, Korea Utara dan Pakiskan. BATAN juga tidak melakukan upaya pengkayaan uranium.', 'Batan', 'batan, nuklir', 'Admin', '', '2019-07-02 06:57:44', '2019-07-02 06:57:44', 'active'),
-(7, 'Kenapa kita butuh PLTN?', 'Sesuai Peraturan Presiden RI No. 5 Tahun 2006 tentang Kebijaksanaan Energi Nasional telah menetapkan sasaran terwujudnya bauran energi (energy mix) yang optimal pada tahun 2O25, yaitu peranan masing-masing jenis energi terhadap konsumsi energi nasional. Sasaran yang ditargetkan khususnya untuk biomassa, nuklir, tenaga air, tenaga surya dan tenaga angin menjadi lebih dari 5%. Sesuai dengan Undang-undang No. 17 tahun 2007 tentang RPJPN, pada RPJM ke-3 (2015-2019) mulai dimanfaatkannya tenaga nuklir untuk pembangkitan listrik dengan mempertimbangkan faktor keselamatan yang ketat dan sesuai dengan Undang-undang No. 30 tahun 2007 tentang Energi, bahwa sumber daya energi fosil, panas bumi, hidro skala besar dan sumber energi nuklir dikuasai oleh negara dan dimanfaatkan untuk sebesar-besarnya untuk kemakmuran rakyat.', 'Batan', 'pltn, PLTN', 'Admin', '', '2019-07-02 07:04:43', '2019-07-02 07:04:43', 'active'),
-(8, 'Berapa korban kecelakaan nuklir selama ini?', 'Selama 64 tahun terakhir terjadi 31 kecelakaan yang merenggut korban 539 orang, 186 diantaranya meninggal. Dalam 18 tahun terakhir ada 14 kecelakaan di Industri Kimia yang merenggut korban 64.652 orang, 4.287 diantaranya meninggal. Khusus di Indonesia dalam 5 tahun terakhir ada 76.866 orang korban kecelakaan lalu lintas, 54.733 diantaranya meninggal (30 orang/hari).', 'Batan', 'nuklir', 'Admin', '', '2019-07-02 08:49:01', '2019-07-02 08:49:01', 'active'),
+(7, 'Kenapa kita butuh PLTN?', 'Sesuai Peraturan Presiden RI No. 5 Tahun 2006 tentang Kebijaksanaan Energi Nasional telah menetapkan sasaran terwujudnya bauran energi (energy mix) yang optimal pada tahun 2O25, yaitu peranan masing-masing jenis energi terhadap konsumsi energi nasional. Sasaran yang ditargetkan khususnya untuk biomassa, nuklir, tenaga air, tenaga surya dan tenaga angin menjadi lebih dari 5%. Sesuai dengan Undang-undang No. 17 tahun 2007 tentang RPJPN, pada RPJM ke-3 (2015-2019) mulai dimanfaatkannya tenaga nuklir untuk pembangkitan listrik dengan mempertimbangkan faktor keselamatan yang ketat dan sesuai dengan Undang-undang No. 30 tahun 2007 tentang Energi, bahwa sumber daya energi fosil, panas bumi, hidro skala besar dan sumber energi nuklir dikuasai oleh negara dan dimanfaatkan untuk sebesar-besarnya untuk kemakmuran rakyat.', 'Keselamatan dan Keamanan Nuklir', 'pltn, PLTN', 'Admin', '', '2019-07-02 07:04:43', '2019-07-02 07:04:43', 'active'),
+(8, 'Berapa korban kecelakaan nuklir selama ini?', 'Selama 64 tahun terakhir terjadi 31 kecelakaan yang merenggut korban 539 orang, 186 diantaranya meninggal. Dalam 18 tahun terakhir ada 14 kecelakaan di Industri Kimia yang merenggut korban 64.652 orang, 4.287 diantaranya meninggal. Khusus di Indonesia dalam 5 tahun terakhir ada 76.866 orang korban kecelakaan lalu lintas, 54.733 diantaranya meninggal (30 orang/hari).', 'Keselamatan dan Keamanan Nuklir', 'nuklir', 'Admin', '', '2019-07-02 08:49:01', '2019-07-02 08:49:01', 'active'),
 (9, 'Apa peranan BATAN dalam pembuatan PLTN?', 'Bisa sebagai pemasok tenaga profesional bidang nuklir. (Catatan : Semua SDM yang terkait dengan pengelolaan zat radioaktif wajib mengantongi sertifikasi kompetensi dan diawasi oleh BAPETEN, termasuk untuk NDT dan PLTN.)', 'Batan', 'batan, pltn, PLTN', 'Admin', '', '2019-07-02 08:49:45', '2019-07-02 08:49:45', 'active'),
-(10, 'Bagaimana nuklir dapat menghasilkan listrik?', 'Nuklir diproses menghasilkan panas yang akan dipakai menggerakkan turbin pembangkit listrik', 'Batan', 'nuklir, listrik', 'Admin', '', '2019-07-02 08:51:32', '2019-07-02 08:51:32', 'active'),
-(11, 'Apakah peranan Energi Nuklir dalam pembangkitan Listrik?', 'Diversifikasi:pasokan energi dalam bentuk listrik Konservasi:penghematan penggunaan sumber daya energi nasional Pelestarian Lingkungan : Mengurangi emisi gas rumah kaca (GHC) secara signifikan', 'Batan', 'nuklir, listrik', 'Admin', '', '2019-07-02 08:51:32', '2019-07-02 08:51:32', 'active'),
+(10, 'Bagaimana nuklir dapat menghasilkan listrik?', 'Nuklir diproses menghasilkan panas yang akan dipakai menggerakkan turbin pembangkit listrik', 'Reaktor Nuklir', 'nuklir, listrik', 'Admin', '', '2019-07-02 08:51:32', '2019-07-02 08:51:32', 'active'),
+(11, 'Apakah peranan Energi Nuklir dalam pembangkitan Listrik?', 'Diversifikasi:pasokan energi dalam bentuk listrik Konservasi:penghematan penggunaan sumber daya energi nasional Pelestarian Lingkungan : Mengurangi emisi gas rumah kaca (GHC) secara signifikan', 'Reaktor Nuklir', 'nuklir, listrik', 'Admin', '', '2019-07-02 08:51:32', '2019-07-02 08:51:32', 'active'),
 (31, 'apa kepanjangan dari BATAN?', 'badan tenaga nuklir nasional', 'Batan', 'batan', 'kontributor 1', '', '2019-07-15 13:04:58', '2019-07-15 13:04:58', 'active');
 
 -- --------------------------------------------------------
@@ -100,7 +310,7 @@ CREATE TABLE `kategori_faq` (
 --
 
 INSERT INTO `kategori_faq` (`ID_kategori`, `Nama_kategori`, `ID_parent`) VALUES
-(1, 'Daur Bahan Bakar Nuklir dan Bahan Maju', '0'),
+(1, 'Bahan Bakar', '0'),
 (2, 'Isotop dan Radiasi', '1'),
 (3, 'Keselamatan dan Keamanan Nuklir', '2'),
 (4, 'Reaktor Nuklir', '3'),
@@ -164,7 +374,8 @@ CREATE TABLE `open_question` (
 --
 
 INSERT INTO `open_question` (`ID_question`, `username`, `pertanyaan`, `jawaban`, `date_created`, `status`) VALUES
-(3, 'tita', 'apa kepanjangan dari BATAN?', 'badan tenaga nuklir nasional', '2019-07-12 02:46:32', 'open');
+(3, 'tita', 'apa kepanjangan dari BATAN?', 'badan tenaga nuklir nasional', '2019-07-12 02:46:32', 'open'),
+(4, 'p', 'haiii', '', '2019-07-16 01:19:09', 'open');
 
 -- --------------------------------------------------------
 
@@ -188,8 +399,7 @@ CREATE TABLE `question_assigned_to_contributor` (
 --
 
 INSERT INTO `question_assigned_to_contributor` (`ID_assigned`, `ID_question`, `ID_user`, `ID_kompetensi`, `timestamp_assigned`, `pertanyaan`, `jawaban`, `date_answered`) VALUES
-(2, 0, 0, 0, '2019-07-15 14:28:52', 'halo', 'p', '2019-07-15 14:28:52'),
-(3, 1, 1, 17258, '2019-07-15 14:37:57', 'lalalaa', '', '2019-07-15 14:37:57');
+(2, 0, 0, 0, '2019-07-15 14:28:52', 'halo', 'p', '2019-07-15 14:28:52');
 
 -- --------------------------------------------------------
 
@@ -284,7 +494,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`ID_user`, `ID_level`, `Username`, `Password`, `Email`, `Nama`, `Institution`, `Job`, `Province`, `State`, `Register`, `lastvisit`, `lastmodified`, `modifiedby`, `Aktivasi`, `Kode_aktivasi`) VALUES
 (1, '1', 'Admin', 'Admin', 'Admin@gmail.com', 'Admin', 'BATAN', 'BATAN', 'INDONESIA', 'INDONESIA', '2019-07-12 03:23:50', '2019-07-12 03:23:50', '2019-07-12 03:23:50', '', 'Y', ''),
-(15, '2', 'kontributor', 'kontributor', 'kontributor@gmail.com', 'kontributor', 'BATAN', 'BATAN', 'INDONESIA', 'INDONESIA', '2019-07-12 03:28:05', '2019-07-12 03:28:05', '2019-07-12 03:28:05', '', 'Y', '');
+(15, '2', 'kontributor', 'kontributor', 'kontributor@gmail.com', 'kontributor', 'BATAN', 'BATAN', 'INDONESIA', 'INDONESIA', '2019-07-12 03:28:05', '2019-07-12 03:28:05', '2019-07-12 03:28:05', '', 'Y', ''),
+(16, '3', 'p', 'p', 'p@gmail.com', 'p', 'p', 'p', 'p', 'p', '2019-07-15 23:24:31', '2019-07-15 23:24:31', '2019-07-15 23:24:31', '', 'T', '');
 
 -- --------------------------------------------------------
 
@@ -325,6 +536,12 @@ INSERT INTO `xlevel` (`ID_level`, `Name_level`, `dateinserted`, `lastmodified`, 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `daftar_negara`
+--
+ALTER TABLE `daftar_negara`
+  ADD PRIMARY KEY (`ID_negara`);
 
 --
 -- Indexes for table `faq`
@@ -403,6 +620,12 @@ ALTER TABLE `xlevel`
 --
 
 --
+-- AUTO_INCREMENT for table `daftar_negara`
+--
+ALTER TABLE `daftar_negara`
+  MODIFY `ID_negara` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=194;
+
+--
 -- AUTO_INCREMENT for table `faq`
 --
 ALTER TABLE `faq`
@@ -430,7 +653,7 @@ ALTER TABLE `kategori_faq`
 -- AUTO_INCREMENT for table `open_question`
 --
 ALTER TABLE `open_question`
-  MODIFY `ID_question` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID_question` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `question_assigned_to_contributor`
