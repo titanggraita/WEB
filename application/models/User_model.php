@@ -18,6 +18,16 @@ class User_model extends CI_Model
         $que = $this->db->get('User');
         return $que->result_array();
     }
+    public function getAllProvinsi()
+    {
+        $que = $this->db->get('daftar_provinsi');
+        return $que->result_array();
+    }
+    public function getAllNegara()
+    {
+        $que = $this->db->get('daftar_negara');
+        return $que->result_array();
+    }
     public function getAllKontributor()
     {
         $que = $this->db->get('kompetensi_kontributor');
@@ -34,6 +44,7 @@ class User_model extends CI_Model
             "Institution" => $this->input->post('Institution', true),
             "Job" => $this->input->post('Job', true),
             "Province" => $this->input->post('Province', true),
+            "State" => $this->input->post('State', true),
             "ID_level" => 3,
             "Aktivasi" => 'Y'
         ];
