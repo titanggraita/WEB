@@ -63,7 +63,7 @@ body {font-family: "Lato", sans-serif;}
    
 </div>
 
-<div id="box" style="margin-left:450px;">
+<div id="box" style="margin-left:450px;margin-top:150px;">
             <div class="p-4">    
                 <form action="" method="POST">
                     <div class="form-group">
@@ -86,10 +86,26 @@ body {font-family: "Lato", sans-serif;}
                         <a style="color:#3AAFA9;">Job :</a><input type="text" class="form-control" id="job" placeholder="Job" name="Job" value="<?php echo $user->Job ?>">
                     </div>
                     <div class="form-group">
-                        <a style="color:#3AAFA9;">Province :</a><input type="text" class="form-control" id="lokasi" placeholder="Province" name="Province" value="<?php echo $user->Province ?>">
+                      <label for="sel1" style="color:#3AAFA9;">Province :</label>
+                      <select class="form-control" id="sel1">
+                      <?php 
+                      foreach($provinsi as $pr){ 
+                        $this->db->query("SELECT * FROM daftar_provinsi")->row_array();
+                      ?>
+                        <option><?php echo $pr['Nama_provinsi']; ?></option>
+                      <?php }?>
+                      </select>
                     </div>
                     <div class="form-group">
-                        <a style="color:#3AAFA9;">State :</a><input type="text" class="form-control" id="negara" placeholder="State" name="State" value="<?php echo $user->State ?>">
+                      <label for="sel1" style="color:#3AAFA9;">State :</label>
+                      <select class="form-control" id="sel1">
+                      <?php 
+                      foreach($negara as $ne){ 
+                        $this->db->query("SELECT * FROM daftar_negara")->row_array();
+                      ?>
+                        <option><?php echo $ne['Nama_negara']; ?></option>
+                      <?php }?>
+                      </select>
                     </div>
                     <button type="submit" class="btn btn-block" style="background-color:#3AAFA9; color: #EEE88A;">Submit</button>
                 </form>
