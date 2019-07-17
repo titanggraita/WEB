@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 17, 2019 at 02:21 PM
+-- Generation Time: Jul 17, 2019 at 03:57 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -231,6 +231,57 @@ INSERT INTO `daftar_negara` (`ID_negara`, `Nama_negara`) VALUES
 (191, 'Yunani'),
 (192, 'Zambia'),
 (193, 'Zimbabwe');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `daftar_provinsi`
+--
+
+CREATE TABLE `daftar_provinsi` (
+  `ID_provinsi` int(50) NOT NULL,
+  `Nama_provinsi` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `daftar_provinsi`
+--
+
+INSERT INTO `daftar_provinsi` (`ID_provinsi`, `Nama_provinsi`) VALUES
+(1, 'Aceh'),
+(2, 'Sumatera Utara'),
+(3, 'Sumatera Barat'),
+(4, 'Riau'),
+(5, 'Kepulauan Riau'),
+(6, 'Jambi'),
+(7, 'Sumatera Selatan'),
+(8, 'Bangka Belitung'),
+(9, 'Bengkulu'),
+(10, 'Lampung'),
+(11, 'DKI Jakarta'),
+(12, 'Jawa Barat'),
+(13, 'Banten'),
+(14, 'Jawa Tengah'),
+(15, 'Daerah Istimewa Yogyakarta'),
+(16, 'Jawa Timur'),
+(17, 'Bali'),
+(18, 'Nusa Tenggara Barat'),
+(19, 'Nusa Tenggara Timur'),
+(20, 'Kalimantan Utara'),
+(21, 'Kalimantan Barat'),
+(22, 'Kalimantan Tengah'),
+(23, 'Kalimatan Selatan'),
+(24, 'Kalimantan Timur'),
+(25, 'Sulawesi Utara'),
+(26, 'Sulawesi Barat'),
+(27, 'Sulawesi Tengah'),
+(28, 'Sulawesi Tenggara'),
+(29, 'Sulawesi Selatan '),
+(30, 'Gorontalo'),
+(31, 'Maluku'),
+(32, 'Maluku Utara'),
+(33, 'Papua Barat'),
+(34, 'Papua');
 
 -- --------------------------------------------------------
 
@@ -544,6 +595,12 @@ ALTER TABLE `daftar_negara`
   ADD PRIMARY KEY (`ID_negara`);
 
 --
+-- Indexes for table `daftar_provinsi`
+--
+ALTER TABLE `daftar_provinsi`
+  ADD PRIMARY KEY (`ID_provinsi`);
+
+--
 -- Indexes for table `faq`
 --
 ALTER TABLE `faq`
@@ -624,6 +681,12 @@ ALTER TABLE `xlevel`
 --
 ALTER TABLE `daftar_negara`
   MODIFY `ID_negara` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=194;
+
+--
+-- AUTO_INCREMENT for table `daftar_provinsi`
+--
+ALTER TABLE `daftar_provinsi`
+  MODIFY `ID_provinsi` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `faq`
