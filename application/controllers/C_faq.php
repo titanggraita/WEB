@@ -18,5 +18,13 @@ class C_faq extends CI_Controller
 		$this->load->view('search_faq', $data);
 		$this->load->view('templates/footer');
 	}
+	public function question($id_kategori)
+	{
+		$data['title'] = "FAQ";
+		$data['faq'] = $this->Faq_model->get_faq_bykategori($id_kategori);
+		$this->load->view('templates/header', $data);
+		$this->load->view('search_faq', $data);
+		$this->load->view('templates/footer');
+	}
 }
 ?>

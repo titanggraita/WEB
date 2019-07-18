@@ -71,7 +71,7 @@
           <div class="card-body" style="background-color:#EEE8AA;">
             <h5 class="card-title" style="color:#3AAFA9;"><?php echo $data['Nama_kategori']; ?></h5>
             <p class="card-text" style="color:#3AAFA9"><?= $jml['jumlah'] ?> articles</p>
-            <a href="#" class="btn btn-primary bg-nav" style="color:#EEE8AA;">Go To Question</a>
+            <a href="<?= base_url() ?>C_faq/question/<?= $data['ID_kategori'] ?>" class="btn btn-info bg-nav" style="color:#EEE8AA;">Go To Question</a>
           </div>
         </div>
       </div>

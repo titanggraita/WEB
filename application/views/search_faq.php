@@ -103,7 +103,8 @@
       }
 
       ?>
-
+      <br>
+      <a href="<?= base_url() ?>user/Open_question">Do you want to ask a question?</a>
     </div>
   </div>
 </div>

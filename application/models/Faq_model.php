@@ -16,6 +16,11 @@ class Faq_model extends CI_Model
 		$que = $this->db->get('faq');
 		return $que->result_array();
 	}
+	public function get_faq_bykategori($id_kategori)
+	{
+		$que = $this->db->query("SELECT faq.* FROM faq JOIN kategori_faq ON faq.kategori = kategori_faq.Nama_kategori WHERE kategori_faq.ID_kategori = $id_kategori");
+		return $que->result_array();
+	}
 	public function getAllQuestionFromQuestionAssigned()
 	{
 		$que = $this->db->get('question_assigned_to_contributor');
