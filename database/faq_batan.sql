@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 17, 2019 at 03:57 PM
+-- Generation Time: Jul 18, 2019 at 06:49 AM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -281,7 +281,8 @@ INSERT INTO `daftar_provinsi` (`ID_provinsi`, `Nama_provinsi`) VALUES
 (31, 'Maluku'),
 (32, 'Maluku Utara'),
 (33, 'Papua Barat'),
-(34, 'Papua');
+(34, 'Papua'),
+(35, 'Luar Indonesia');
 
 -- --------------------------------------------------------
 
@@ -425,8 +426,7 @@ CREATE TABLE `open_question` (
 --
 
 INSERT INTO `open_question` (`ID_question`, `username`, `pertanyaan`, `jawaban`, `date_created`, `status`) VALUES
-(3, 'tita', 'apa kepanjangan dari BATAN?', 'badan tenaga nuklir nasional', '2019-07-12 02:46:32', 'open'),
-(4, 'p', 'haiii', '', '2019-07-16 01:19:09', 'open');
+(3, 'tita', 'apa kepanjangan dari BATAN?', 'badan tenaga nuklir nasional', '2019-07-12 02:46:32', 'open');
 
 -- --------------------------------------------------------
 
@@ -686,7 +686,7 @@ ALTER TABLE `daftar_negara`
 -- AUTO_INCREMENT for table `daftar_provinsi`
 --
 ALTER TABLE `daftar_provinsi`
-  MODIFY `ID_provinsi` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `ID_provinsi` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `faq`
@@ -710,19 +710,19 @@ ALTER TABLE `faq_attachment`
 -- AUTO_INCREMENT for table `kategori_faq`
 --
 ALTER TABLE `kategori_faq`
-  MODIFY `ID_kategori` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+  MODIFY `ID_kategori` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `open_question`
 --
 ALTER TABLE `open_question`
-  MODIFY `ID_question` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID_question` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `question_assigned_to_contributor`
 --
 ALTER TABLE `question_assigned_to_contributor`
-  MODIFY `ID_assigned` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID_assigned` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `stopword`
@@ -734,7 +734,7 @@ ALTER TABLE `stopword`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID_user` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `ID_user` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
