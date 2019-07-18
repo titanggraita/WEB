@@ -9,7 +9,9 @@ class C_kontributor extends CI_Controller {
 		$this->load->model('Faq_model');
 		$this->load->library('form_validation');
         $this->load->library('session');
-
+		if ($this->session->userdata("user")["ID_level"] != 2) {
+			redirect('user');
+		}
     }
     public function index()
 	{
@@ -83,4 +85,3 @@ class C_kontributor extends CI_Controller {
 			}
 		}
 }
-?>

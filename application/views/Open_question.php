@@ -13,25 +13,62 @@
         <a class="nav-link" href="<?= base_url() ?>user/about">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="<?= base_url() ?>user/policies">Policies</a>
+        <a class="nav-link" href="<?= base_url() ?>user/policies">Policies</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<?= base_url() ?>user/contact">Contact Us</a>
       </li>
+      <?php
+      if ($this->session->userdata('user')) {
+        ?>
+        <li class="nav-item ml-2">
+          <a class="nav-link active" href="<?= base_url() ?>user/Open_question"><button class="btn btn-info btn-sm" style="color:#EEE8AA;">Open Question</button></a>
+        </li>
+        <li class="nav-item ml-2">
+          <a class="nav-link" href="<?= base_url() ?>C_login/logout"><button class="btn btn-info btn-sm" style="color:#EEE8AA;">Logout</button></a>
+        </li>
+      <?php
+      } else {
+        ?>
+        <li class="nav-item ml-2">
+          <a class="nav-link" href="<?= base_url() ?>C_login/register"><button class="btn btn-info btn-sm" style="color:#EEE8AA;">Register</button></a>
+        </li>
+        <li class="nav-item ml-2">
+          <a class="nav-link" href="<?= base_url() ?>C_login/index"><button class="btn btn-info btn-sm" style="color:#EEE8AA;">Login</button></a>
+        </li>
+      <?php
+      }
+      ?>
     </ul>
   </div>
 
 </nav>
-
-<div id="box1" style="margin-top:50px;">
-  <div class="p-4">
-    <form action="" method="POST">
-      <div class="form-group">
-        <p style="color:#3AAFA9;font-size:30px; margin-left:110px;">OPEN QUESTION</p>
-        <a style="color:#3AAFA9;">Username :</a> <input type="text" class="form-control" id="uname" placeholder="username" name="username">
+<div class="bg-nav text-center py-4">
+  <p style="color:#EEE8AA; font-size:18px;">How can we help you today?</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <form action="<?= base_url('c_faq/search') ?>" method="POST">
+          <div class="input-group">
+            <input type="text" class="form-control" style="border-radius:40px;" placeholder="Search for articles ..." name="keyword">
+            <span class="input-group-btn">
+              <button class="btn btn-search" type="submit"><i class="fa fa-search fa-fw"></i> Search</button>
+            </span>
+          </div>
+        </form>
       </div>
+    </div>
+  </div>
+</div>
+<div class="box">
+  <div class="p-4">
+    <h3 style="color:#3AAFA9;" class="text-center">Open Question</h3>
+    <?= $this->session->flashdata("message"); ?>
+    <form action="<?= base_url() ?>user/Open_question" method="POST">
       <div class="form-group">
-        <a style="color:#3AAFA9;">Pertanyaan :</a><input type="text" class="form-control" id="txt" placeholder="pertanyaan" name="pertanyaan">
+        <a style="color:#3AAFA9;">Pertanyaan :</a>
+        <textarea name="pertanyaan" id="txt" cols="30" rows="10" class="form-control" placeholder="tulis pertanyaan anda di sini..."></textarea>
+        <?php echo form_error('pertanyaan', '<small class="form-text text-danger pl-3">*', '</small>'); ?>
       </div>
       <button type="submit" class="btn btn-block" style="background-color:#3AAFA9; color: #EEE88A;">Submit</button>
     </form>

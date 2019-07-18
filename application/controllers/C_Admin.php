@@ -10,7 +10,9 @@ class C_Admin extends CI_Controller {
 		$this->load->model('Faq_model');
 		$this->load->library('form_validation');
         $this->load->library('session');
-
+		if ($this->session->userdata("user")["ID_level"] != 1) {
+			redirect('user');
+		}
     }
     public function index()
 	{
@@ -219,4 +221,3 @@ class C_Admin extends CI_Controller {
 		// 	}
 		// }
 }
-?>

@@ -71,16 +71,13 @@ body {
   position: center;
   overflow: hidden;
 }
-#box{
+.box{
   width:500px;
-  height:790px;
   background:#EEE8AA;
   border:solid 1px rgb(58,175,169);
-  margin-top: 100px;
-  margin-bottom: 60px;
-  margin-left: 380px;
-  position: center;
-  overflow: hidden;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 #box1{
   width:500px;

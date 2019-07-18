@@ -20,18 +20,25 @@
       </li>
       <?php
       if ($this->session->userdata('user')) {
-        # code...
+        ?>
+        <li class="nav-item ml-2">
+          <a class="nav-link" href="<?= base_url() ?>user/Open_question"><button class="btn btn-info btn-sm" style="color:#EEE8AA;">Open Question</button></a>
+        </li>
+        <li class="nav-item ml-2">
+          <a class="nav-link" href="<?= base_url() ?>C_login/logout"><button class="btn btn-info btn-sm" style="color:#EEE8AA;">Logout</button></a>
+        </li>
+      <?php
       } else {
-        # code...
+        ?>
+        <li class="nav-item ml-2">
+          <a class="nav-link" href="<?= base_url() ?>C_login/register"><button class="btn btn-info btn-sm" style="color:#EEE8AA;">Register</button></a>
+        </li>
+        <li class="nav-item ml-2">
+          <a class="nav-link" href="<?= base_url() ?>C_login/index"><button class="btn btn-info btn-sm" style="color:#EEE8AA;">Login</button></a>
+        </li>
+      <?php
       }
-
       ?>
-      <li class="nav-item ml-2">
-        <a class="nav-link" href="<?= base_url() ?>user/Open_question"><button class="btn btn-info btn-sm" style="color:#EEE8AA;">Open Question</button></a>
-      </li>
-      <li class="nav-item ml-2">
-        <a class="nav-link" href="<?= base_url() ?>C_login/index"><button class="btn btn-info btn-sm" style="color:#EEE8AA;">Login</button></a>
-      </li>
     </ul>
   </div>
 

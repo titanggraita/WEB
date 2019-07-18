@@ -9,6 +9,7 @@ class User extends CI_Controller
 		$this->load->model('User_model');
 		$this->load->model('Faq_model');
 		$this->load->model('Kategori_model');
+		$this->load->model('Stopword_model');
 		$this->load->library('form_validation');
 		$this->load->library('session');
 	}
@@ -56,31 +57,34 @@ class User extends CI_Controller
 		$this->load->view('Forgot_password', $data);
 		$this->load->view('templates/footer');
 	}
-	
+
 	public function Open_question()
 	{
-		// if (condition) {
-		// 	# code...
-		// } else {
-		// 	# code...
-		// }
-		
-		$this->form_validation->set_rules('username','username', 'required');
-        $this->form_validation->set_rules('pertanyaan','pertanyaan', 'required');
+		if ($this->session->userdata('user')) {
+			$this->form_validation->set_rules('pertanyaan', 'pertanyaan', 'required|trim');
 
-        if ($this->form_validation->run() == FALSE){
-            $data['title'] = "FAQ - BATAN - Open question";
-            $this->load->view('templates/header',$data);
-            $this->load->view('Open_question');
-            $this->load->view('templates/footer');
-        }else{
-            $open = [
-                "username" => $this->input->post('username', true),
-                "pertanyaan" => $this->input->post('pertanyaan', true),
-            ];
-            $this->session->set_userdata('open', $open);
-            $this->Faq_model->tambahQuestion();
-            redirect('user/index');
-        }
-	}	
+			if ($this->form_validation->run() == FALSE) {
+				$data['title'] = "FAQ - BATAN - Open question";
+				$this->load->view('templates/header', $data);
+				$this->load->view('Open_question');
+				$this->load->view('templates/footer');
+			} else {
+				$cek = $this->Stopword_model->checkStopword();
+				if ($cek > 0) {
+					$this->session->set_flashdata('message', '<div class="alert alert-danger " role="alert">
+			Your question contains a forbidden word!
+		  </div>');
+					redirect('user/Open_question');
+				} else {
+					$this->Faq_model->tambahQuestion();
+					$this->session->set_flashdata('message', '<div class="alert alert-success " role="alert">
+			Your question has been recorded, please wait for our contributors to answer it :)
+		  </div>');
+					redirect('user/Open_question');
+				}
+			}
+		} else {
+			redirect('C_login');
+		}
+	}
 }
