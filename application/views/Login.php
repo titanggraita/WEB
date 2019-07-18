@@ -49,9 +49,12 @@
       <div class="form-group">
         <p style="color:#3AAFA9;font-size:30px; margin-left:180px;">LOGIN</p>
         <a style="color:#3AAFA9;">Username :</a> <input type="text" class="form-control" id="uname" placeholder="Username" name="Username">
+        <?php echo form_error('Username', '<small class="form-text text-danger pl-3">*', '</small>'); ?>
       </div>
       <div class="form-group">
-        <a style="color:#3AAFA9;">Password :</a><input type="password" class="form-control" id="pwd" placeholder="Password" name="Password">
+        <a style="color:#3AAFA9;">Password :</a>
+        <input type="password" class="form-control" id="pwd" placeholder="Password" name="Password">
+        <?php echo form_error('Password', '<small class="form-text text-danger pl-3">*', '</small>'); ?>
       </div>
       <a href="<?= base_url() ?>C_login/Login"><button type="submit" class="btn btn-block" style="background-color:#3AAFA9; color: #EEE88A;">Login</button></a>
     </form>
