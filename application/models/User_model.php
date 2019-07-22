@@ -43,8 +43,8 @@ class User_model extends CI_Model
             "Nama" => $this->input->post('Nama', true),
             "Institution" => $this->input->post('Institution', true),
             "Job" => $this->input->post('Job', true),
-            "Province" => $this->input->post('Province', true),
             "State" => $this->input->post('State', true),
+            "Province" => $this->input->post('Province', true),
             "ID_level" => 3,
             "Aktivasi" => 'Y'
         ];
@@ -59,8 +59,8 @@ class User_model extends CI_Model
             "Nama" => $this->input->post('Nama', true),
             "Institution" => $this->input->post('Institution', true),
             "Job" => $this->input->post('Job', true),
-            "Province" => $this->input->post('Province', true),
             "State" => $this->input->post('State', true),
+            "Province" => $this->input->post('Province', true),
             "ID_level" => 2,
             "Aktivasi" => 'Y'
         ];
@@ -87,8 +87,9 @@ class User_model extends CI_Model
             "Nama" => $this->input->post('Nama', true),
             "Institution" => $this->input->post('Institution', true),
             "Job" => $this->input->post('Job', true),
-            "Province" => $this->input->post('Province', true),
-            "State" => $this->input->post('State', true)
+            "State" => $this->input->post('State', true),
+            "Province" => $this->input->post('Province', true)
+            
         ];
 
         $this->db->where('ID_user', $ID_user);

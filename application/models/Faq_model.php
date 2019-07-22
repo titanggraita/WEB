@@ -16,6 +16,11 @@ class Faq_model extends CI_Model
 		$que = $this->db->get('faq');
 		return $que->result_array();
 	}
+	public function getAllStatus()
+	{
+		$que = $this->db->get('status');
+		return $que->result_array();
+	}
 	public function get_faq_bykategori($id_kategori)
 	{
 		$que = $this->db->query("SELECT faq.* FROM faq JOIN kategori_faq ON faq.kategori = kategori_faq.Nama_kategori WHERE kategori_faq.ID_kategori = $id_kategori");
@@ -56,6 +61,16 @@ class Faq_model extends CI_Model
 		$this->db->where('ID_question', $ID_question);
 		$this->db->update('open_question', $data);
 	}
+	public function AnswerQuestionKontributor($id)
+	{
+		$data = [
+			"pertanyaan" => $this->input->post('pertanyaan', true),
+			"jawaban" => $this->input->post('jawaban', true)
+		];
+
+		$this->db->where('ID_assigned', $id);
+		$this->db->update('question_assigned_to_contributor', $data);
+	}
 	public function answerKontributor($id)
 	{
 		$data = [
@@ -87,6 +102,7 @@ class Faq_model extends CI_Model
 		$data = [
 			"pertanyaan" => $this->input->post('pertanyaan', true),
 			"jawaban" => $this->input->post('jawaban', true),
+			"kategori" => $this->input->post('kategori', true),
 			"keyword" => $this->input->post('keyword', true),
 			"author" => $this->input->post('author', true),
 			"status" => $this->input->post('status', true)
@@ -99,9 +115,10 @@ class Faq_model extends CI_Model
 		$data = [
 			"pertanyaan" => $this->input->post('pertanyaan', true),
 			"jawaban" => $this->input->post('jawaban', true),
+			"kategori" => $this->input->post('kategori', true),
 			"keyword" => $this->input->post('keyword', true),
 			"author" => $this->input->post('author', true),
-			"status" => $this->input->post('status', true)
+			"status" => $this->input->post('status', true),
 		];
 		$this->db->insert('faq', $data);
 	}
@@ -110,24 +127,31 @@ class Faq_model extends CI_Model
 		$data = [
 			"pertanyaan" => $this->input->post('pertanyaan', true),
 			"jawaban" => $this->input->post('jawaban', true),
+			"kategori" => $this->input->post('kategori', true),
 			"keyword" => $this->input->post('keyword', true),
 			"author" => $this->input->post('author', true),
 			"status" => $this->input->post('status', true)
 		];
-
 		$this->db->where('ID_question', $ID_question);
 		$this->db->insert('faq', $data);
 	}
-	// public function assignContributor($id)
-	// {
-	// 	$data = [
-	// 		"pertanyaan" => $this->input->post('pertanyaan', true),
-	// 		"user" => $this->input->post('user', true),
-	//     	"kompetensi" => $this->input->post('kompetensi', true)
-	// 	];
-	// 	$this->db->where('ID_question',$id);
-	// 	$this->db->insert('question_assigned_to_contributor',$data);
-	// }
+	public function assignQuestionToContributor($id) //for admin
+	{
+		$data = [
+			"pertanyaan" => $this->input->post('pertanyaan', true)
+		];
+		$this->db->where('ID_question',$id);
+		$this->db->insert('question_assigned_to_contributor',$data);
+	}
+
+	public function assignQuestionToAdmin($id) //for contributor
+	{
+		$data = [
+			"jawaban" => $this->input->post('jawaban', true)
+		];
+		$this->db->where('ID_assigned',$id);
+		$this->db->insert('open_question',$data);
+	}
 
 	public function tambahFaqKontributor()
 	{
