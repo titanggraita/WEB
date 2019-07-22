@@ -58,28 +58,38 @@ class C_Admin extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 	public function tambah()
-		{
-			$data['title'] = "Form Tambah Data";
-
-			$this->form_validation->set_rules('Username','Username', 'required');
-        	$this->form_validation->set_rules('Password','Password', 'required');
-        	$this->form_validation->set_rules('Email','Email', 'required');
-        	$this->form_validation->set_rules('Nama', 'Nama', 'required');
-        	$this->form_validation->set_rules('Institution', 'Institution','required');
-        	$this->form_validation->set_rules('Job', 'Job', 'required');
-        	$this->form_validation->set_rules('Province', 'Province', 'required');
-        	$this->form_validation->set_rules('State', 'State', 'required');
-
-			$data['provinsi'] = $this->User_model->getAllProvinsi();
-           	$data['negara'] = $this->User_model->getAllNegara();
-			if ($this->form_validation->run()){
-				$this->User_model->tambahContributor();
-				redirect('C_Admin/lihat_user');
-			}
-			$this->load->view('templates/header',$data);
-			$this->load->view('tambah_user');
-			$this->load->view('templates/footer');
-		}
+	{
+			$this->form_validation->set_rules('Username', 'Username', 'required');
+			$this->form_validation->set_rules('Password', 'Password', 'required');
+			$this->form_validation->set_rules('Email', 'Email', 'required');
+			$this->form_validation->set_rules('Nama', 'Nama', 'required');
+			$this->form_validation->set_rules('Institution', 'Institution', 'required');
+			$this->form_validation->set_rules('Job', 'Job', 'required');
+			
+        if ($this->form_validation->run() == FALSE) {
+            $data['title'] = "FAQ - BATAN - Register";
+            $data['provinsi'] = $this->User_model->getAllProvinsi();
+            $data['negara'] = $this->User_model->getAllNegara();
+            $this->load->view('templates/header', $data);
+            $this->load->view('tambah_user');
+            $this->load->view('templates/footer');
+        } else {
+            $login = [
+                "Username" => $this->input->post('Username', true),
+                "Password" => $this->input->post('Password', true),
+                "Email" => $this->input->post('Email', true),
+                "Nama" => $this->input->post('Nama', true),
+                "Institution" => $this->input->post('Institution', true),
+                "Job" => $this->input->post('Job', true),
+                "Province" => $this->input->post('Province', true),
+                "State" => $this->input->post('State', true),
+                "ID_level" => 2,
+            ];
+            $this->User_model->tambahContributor();
+            $this->session->set_userdata('C_Admin', $login);
+            redirect('C_Admin/lihat_user');
+        }
+	}
 		public function ubah($id)
 		{
 			$data['title'] = 'Form Ubah Data';
@@ -90,9 +100,9 @@ class C_Admin extends CI_Controller {
         	$this->form_validation->set_rules('Email','Email', 'required');
         	$this->form_validation->set_rules('Nama', 'Nama', 'required');
         	$this->form_validation->set_rules('Institution', 'Institution','required');
-        	$this->form_validation->set_rules('Job', 'Job', 'required');
+			$this->form_validation->set_rules('Job', 'Job', 'required');
+			$this->form_validation->set_rules('State', 'State', 'required');
         	$this->form_validation->set_rules('Province', 'Province', 'required');
-        	$this->form_validation->set_rules('State', 'State', 'required');
 
 			$data['provinsi'] = $this->User_model->getAllProvinsi();
            	$data['negara'] = $this->User_model->getAllNegara();
@@ -147,11 +157,14 @@ class C_Admin extends CI_Controller {
 			
 			if(!isset($id)) redirect('C_Admin/index');
 			$this->form_validation->set_rules('pertanyaan','pertanyaan', 'required');
-        	$this->form_validation->set_rules('jawaban','jawaban', 'required');
+			$this->form_validation->set_rules('jawaban','jawaban', 'required');
+			$this->form_validation->set_rules('kategori','kategori', 'required');
         	$this->form_validation->set_rules('keyword','keyword', 'required');
         	$this->form_validation->set_rules('author', 'author', 'required');
         	$this->form_validation->set_rules('status', 'status','required');
 
+			$data['kategori'] = $this->Kategori_model->getAllKategori();
+			$data['status'] = $this->Faq_model->getAllStatus();
 			$data['faq'] = $this->Faq_model->getFaqById($id);
 			if ($this->form_validation->run()){
 				$this->Faq_model->ubahDataFaq($id);
@@ -164,21 +177,31 @@ class C_Admin extends CI_Controller {
 		}
 		public function tambah_Faq()
 		{
-			$data['title'] = "Form Tambah Data";
-
 			$this->form_validation->set_rules('pertanyaan','pertanyaan', 'required');
-        	$this->form_validation->set_rules('jawaban','jawaban', 'required');
+			$this->form_validation->set_rules('jawaban','jawaban', 'required');
         	$this->form_validation->set_rules('keyword','keyword', 'required');
         	$this->form_validation->set_rules('author', 'author', 'required');
-        	$this->form_validation->set_rules('status', 'status','required');
 
-			if ($this->form_validation->run()){
+			if ($this->form_validation->run() == FALSE) {
+				$data['title'] = "Form Tambah Data";
+				$data['kategori'] = $this->Kategori_model->getAllKategori();
+				$data['status'] = $this->Faq_model->getAllStatus();
+				$this->load->view('templates/header', $data);
+				$this->load->view('tambah_faq');
+				$this->load->view('templates/footer');
+			} else {
+				$login = [
+					"pertanyaan" => $this->input->post('pertanyaan', true),
+					"jawaban" => $this->input->post('jawaban', true),
+					"kategori" => $this->input->post('kategori', true),
+					"keyword" => $this->input->post('keyword', true),
+					"author" => $this->input->post('author', true),
+					"status" => $this->input->post('status', true),
+				];
 				$this->Faq_model->tambahFaq();
+				$this->session->set_userdata('C_Admin', $login);
 				redirect('C_Admin/lihat_question');
 			}
-			$this->load->view('templates/header',$data);
-			$this->load->view('tambah_faq');
-			$this->load->view('templates/footer');
 		}
 		public function publishFaq($id)
 		{
@@ -189,9 +212,10 @@ class C_Admin extends CI_Controller {
         	$this->form_validation->set_rules('jawaban','jawaban', 'required');
         	$this->form_validation->set_rules('keyword','keyword', 'required');
         	$this->form_validation->set_rules('author', 'author', 'required');
-        	$this->form_validation->set_rules('status', 'status','required');
-
+        	
 			$data['publish'] = $this->Faq_model->getOPById($id);
+			$data['kategori'] = $this->Kategori_model->getAllkategori();
+			$data['status'] = $this->Faq_model->getAllStatus();
 			if ($this->form_validation->run()){
 				$this->Faq_model->publish($id);
 				redirect('C_Admin/lihat_question');
@@ -201,23 +225,22 @@ class C_Admin extends CI_Controller {
 				$this->load->view('templates/footer');
 			}
 		}
-		// public function assignToContributor($id)
-		// {
-		// 	$data['title'] = 'Form Assigned';
+		public function assignToContributor($id)
+		{
+			$data['title'] = 'Form Assigned';
 			
-		// 	if(!isset($id)) redirect('C_Admin/index');
-		// 	$this->form_validation->set_rules('pertanyaan','pertanyaan', 'required');
-		// 	$this->form_validation->set_rules('user','user', 'required');
-        // 	$this->form_validation->set_rules('kompetensi','kompetensi', 'required');
+			if(!isset($id)) redirect('C_Admin/index');
+			$this->form_validation->set_rules('pertanyaan','pertanyaan', 'required');
 
-		// 	$data['assign'] = $this->Faq_model->getOPById($id);
-		// 	if ($this->form_validation->run()){
-		// 		$this->Faq_model->assignContributor($id);
-		// 		redirect('C_Admin/lihat_question');
-		// 	}else{
-		// 		$this->load->view('templates/header',$data);
-		// 		$this->load->view('V_assigned',$data);
-		// 		$this->load->view('templates/footer');
-		// 	}
-		// }
+			$data['assign'] = $this->Faq_model->getOPById($id);
+			if ($this->form_validation->run()){
+				$this->Faq_model->assignQuestionToContributor($id);
+				redirect('C_Admin/lihat_question');
+			}else{
+				$this->load->view('templates/header',$data);
+				$this->load->view('V_assigned',$data);
+				$this->load->view('templates/footer');
+			}
+		}
 }
+?>

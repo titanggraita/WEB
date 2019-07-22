@@ -68,7 +68,7 @@ class C_kontributor extends CI_Controller {
 		}
 		public function Answer_Kontributor($id)
 		{
-			$data['AK'] = 'Form Answer Question';
+			$data['title'] = 'Form Answer Question';
 			
 			if(!isset($id)) redirect('C_kontributor/lihat_questionKontributor');
 			$this->form_validation->set_rules('pertanyaan','pertanyaan', 'required');
@@ -76,11 +76,29 @@ class C_kontributor extends CI_Controller {
 
 			$data['AK'] = $this->Faq_model->getQuestionKontributorById($id);
 			if ($this->form_validation->run()){
-				$this->Faq_model->answerKontributor($id);
+				$this->Faq_model->AnswerQuestionKontributor($id);
 				redirect('C_kontributor/lihat_questionKontributor');
 			}else{
 				$this->load->view('templates/header',$data);
 				$this->load->view('jawab_faq_kontributor',$data);
+				$this->load->view('templates/footer');
+			}
+		}
+		public function assignToAdmin($id)
+		{
+			$data['title'] = 'Form Assigned';
+			
+			if(!isset($id)) redirect('C_Admin/index');
+			$this->form_validation->set_rules('pertanyaan','pertanyaan', 'required');
+			$this->form_validation->set_rules('jawaban','jawaban', 'required');
+
+			$data['assigntoAdmin'] = $this->Faq_model->getQuestionKontributorById($id);
+			if ($this->form_validation->run()){
+				$this->Faq_model->assignQuestionToAdmin($id);
+				redirect('C_kontributor/lihat_questionKontributor');
+			}else{
+				$this->load->view('templates/header',$data);
+				$this->load->view('V_assignedtoadmin',$data);
 				$this->load->view('templates/footer');
 			}
 		}
