@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 18, 2019 at 06:49 AM
+-- Generation Time: Jul 22, 2019 at 06:12 PM
 -- Server version: 10.1.29-MariaDB
 -- PHP Version: 7.2.0
 
@@ -294,13 +294,13 @@ CREATE TABLE `faq` (
   `ID_faq` int(50) NOT NULL,
   `pertanyaan` varchar(200) NOT NULL,
   `jawaban` varchar(1000) NOT NULL,
-  `kategori` enum('Batan','Bahan Bakar','Isotop dan Radiasi','Keselamatan dan Keamanan Nuklir','Reaktor Nuklir','Rekayasa Perangkat dan Fasilitas Nuklir') NOT NULL,
+  `kategori` varchar(50) NOT NULL,
   `keyword` varchar(50) NOT NULL,
   `author` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `datecreated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `dateupdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `status` enum('active','inactive') NOT NULL
+  `status` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -319,7 +319,8 @@ INSERT INTO `faq` (`ID_faq`, `pertanyaan`, `jawaban`, `kategori`, `keyword`, `au
 (9, 'Apa peranan BATAN dalam pembuatan PLTN?', 'Bisa sebagai pemasok tenaga profesional bidang nuklir. (Catatan : Semua SDM yang terkait dengan pengelolaan zat radioaktif wajib mengantongi sertifikasi kompetensi dan diawasi oleh BAPETEN, termasuk untuk NDT dan PLTN.)', 'Batan', 'batan, pltn, PLTN', 'Admin', '', '2019-07-02 08:49:45', '2019-07-02 08:49:45', 'active'),
 (10, 'Bagaimana nuklir dapat menghasilkan listrik?', 'Nuklir diproses menghasilkan panas yang akan dipakai menggerakkan turbin pembangkit listrik', 'Reaktor Nuklir', 'nuklir, listrik', 'Admin', '', '2019-07-02 08:51:32', '2019-07-02 08:51:32', 'active'),
 (11, 'Apakah peranan Energi Nuklir dalam pembangkitan Listrik?', 'Diversifikasi:pasokan energi dalam bentuk listrik Konservasi:penghematan penggunaan sumber daya energi nasional Pelestarian Lingkungan : Mengurangi emisi gas rumah kaca (GHC) secara signifikan', 'Reaktor Nuklir', 'nuklir, listrik', 'Admin', '', '2019-07-02 08:51:32', '2019-07-02 08:51:32', 'active'),
-(31, 'apa kepanjangan dari BATAN?', 'badan tenaga nuklir nasional', 'Batan', 'batan', 'kontributor 1', '', '2019-07-15 13:04:58', '2019-07-15 13:04:58', 'active');
+(16, 'apa kepanjangan dari BATAN?', 'badan tenaga nuklir nasional', 'Batan', 'batan', 'Admin', '', '2019-07-19 03:52:11', '2019-07-19 03:52:11', 'active'),
+(17, 'apa yang dimaksud dengan reaktor nuklir?', 'reaktor adalah blablabla', 'Reaktor Nuklir', 'reaktor', 'Admin', '', '2019-07-19 03:52:53', '2019-07-19 03:52:53', 'active');
 
 -- --------------------------------------------------------
 
@@ -426,7 +427,9 @@ CREATE TABLE `open_question` (
 --
 
 INSERT INTO `open_question` (`ID_question`, `username`, `pertanyaan`, `jawaban`, `date_created`, `status`) VALUES
-(3, 'tita', 'apa kepanjangan dari BATAN?', 'badan tenaga nuklir nasional', '2019-07-12 02:46:32', 'open');
+(3, 'tita', 'apa kepanjangan dari BATAN?', 'badan tenaga nuklir nasional', '2019-07-12 02:46:32', 'open'),
+(4, 'titanggraita', 'apa yang dimaksud dengan reaktor nuklir?', 'reaktor adalah blablabla', '2019-07-18 11:20:52', 'open'),
+(5, 'titanggraita', 'hai', '', '2019-07-19 07:12:18', 'open');
 
 -- --------------------------------------------------------
 
@@ -450,7 +453,8 @@ CREATE TABLE `question_assigned_to_contributor` (
 --
 
 INSERT INTO `question_assigned_to_contributor` (`ID_assigned`, `ID_question`, `ID_user`, `ID_kompetensi`, `timestamp_assigned`, `pertanyaan`, `jawaban`, `date_answered`) VALUES
-(2, 0, 0, 0, '2019-07-15 14:28:52', 'halo', 'p', '2019-07-15 14:28:52');
+(2, 0, 0, 0, '2019-07-15 14:28:52', 'halo', 'p', '2019-07-15 14:28:52'),
+(3, 0, 0, 0, '2019-07-19 07:21:16', 'hai', 'hai jugaa', '2019-07-19 07:21:16');
 
 -- --------------------------------------------------------
 
@@ -465,6 +469,25 @@ CREATE TABLE `rating` (
   `ID_faq` int(50) NOT NULL,
   `No_IP` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `status`
+--
+
+CREATE TABLE `status` (
+  `ID_status` int(10) NOT NULL,
+  `Nama_status` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `status`
+--
+
+INSERT INTO `status` (`ID_status`, `Nama_status`) VALUES
+(1, 'active'),
+(2, 'inactive');
 
 -- --------------------------------------------------------
 
@@ -544,9 +567,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`ID_user`, `ID_level`, `Username`, `Password`, `Email`, `Nama`, `Institution`, `Job`, `Province`, `State`, `Register`, `lastvisit`, `lastmodified`, `modifiedby`, `Aktivasi`, `Kode_aktivasi`) VALUES
-(1, '1', 'Admin', 'Admin', 'Admin@gmail.com', 'Admin', 'BATAN', 'BATAN', 'INDONESIA', 'INDONESIA', '2019-07-12 03:23:50', '2019-07-12 03:23:50', '2019-07-12 03:23:50', '', 'Y', ''),
-(15, '2', 'kontributor', 'kontributor', 'kontributor@gmail.com', 'kontributor', 'BATAN', 'BATAN', 'INDONESIA', 'INDONESIA', '2019-07-12 03:28:05', '2019-07-12 03:28:05', '2019-07-12 03:28:05', '', 'Y', ''),
-(16, '3', 'p', 'p', 'p@gmail.com', 'p', 'p', 'p', 'p', 'p', '2019-07-15 23:24:31', '2019-07-15 23:24:31', '2019-07-15 23:24:31', '', 'T', '');
+(1, '1', 'Admin', 'Admin', 'Admin@gmail.com', 'Admin', 'BATAN', 'BATAN', 'Afganistan', 'Aceh', '2019-07-12 03:23:50', '2019-07-12 03:23:50', '2019-07-12 03:23:50', '', 'Y', ''),
+(17, '3', 'titanggraita', 'tita', 'titanggraita@gmail.com', 'titanggraita', 'telkom', 'mahasiswi', 'Afganistan', 'Bali', '2019-07-18 11:18:04', '2019-07-18 11:18:04', '2019-07-18 11:18:04', '', 'Y', ''),
+(19, '2', 'kontributor', '123', 'kontributor@gmail.com', 'kontributor', 'batan', 'pns', 'Indonesia', 'DKI Jakarta', '2019-07-19 01:40:23', '2019-07-19 01:40:23', '2019-07-19 01:40:23', '', 'Y', '');
 
 -- --------------------------------------------------------
 
@@ -649,6 +672,12 @@ ALTER TABLE `rating`
   ADD PRIMARY KEY (`kode_transaksi`);
 
 --
+-- Indexes for table `status`
+--
+ALTER TABLE `status`
+  ADD PRIMARY KEY (`ID_status`);
+
+--
 -- Indexes for table `stopword`
 --
 ALTER TABLE `stopword`
@@ -692,7 +721,7 @@ ALTER TABLE `daftar_provinsi`
 -- AUTO_INCREMENT for table `faq`
 --
 ALTER TABLE `faq`
-  MODIFY `ID_faq` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `ID_faq` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `faq_assigned`
@@ -716,13 +745,19 @@ ALTER TABLE `kategori_faq`
 -- AUTO_INCREMENT for table `open_question`
 --
 ALTER TABLE `open_question`
-  MODIFY `ID_question` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID_question` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `question_assigned_to_contributor`
 --
 ALTER TABLE `question_assigned_to_contributor`
-  MODIFY `ID_assigned` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID_assigned` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `status`
+--
+ALTER TABLE `status`
+  MODIFY `ID_status` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `stopword`
@@ -734,7 +769,7 @@ ALTER TABLE `stopword`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID_user` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `ID_user` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
