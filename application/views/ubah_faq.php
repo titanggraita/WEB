@@ -74,7 +74,15 @@ body {font-family: "Lato", sans-serif;}
                         <a style="color:#3AAFA9;">Jawaban :</a><input type="text" class="form-control" id="jawaban" placeholder="jawaban" name="jawaban" value="<?php echo $faq->jawaban ?>">
                     </div>
                     <div class="form-group">
-                        <a style="color:#3AAFA9;">Kategori :</a><input type="text" class="form-control" id="kategori" placeholder="kategori" name="kategori" value="<?php echo $faq->kategori ?>">
+                      <label for="sel1" style="color:#3AAFA9;">Kategori :</label>
+                      <select class="form-control" id="sel1" name="kategori">
+                        <?php
+                        foreach ($kategori as $kate) {
+                          $this->db->query("SELECT * FROM kategori_faq")->row_array();
+                          ?>
+                          <option value="<?= $kate['Nama_kategori'] ?>"><?php echo $kate['Nama_kategori']; ?></option>
+                        <?php } ?>
+                      </select>
                     </div>
                     <div class="form-group">
                         <a style="color:#3AAFA9;">Keyword :</a><input type="text" class="form-control" id="keyword" placeholder="keyword" name="keyword" value="<?php echo $faq->keyword ?>">
@@ -83,7 +91,15 @@ body {font-family: "Lato", sans-serif;}
                         <a style="color:#3AAFA9;">Author :</a><input type="text" class="form-control" id="author" placeholder="author" name="author" value="<?php echo $faq->author ?>">
                     </div>
                     <div class="form-group">
-                      <a style="color:#3AAFA9;">Status :</a><input type="text" class="form-control" id="status" placeholder="status" name="status" value="<?php echo $faq->status ?>">
+                      <label for="sel1" style="color:#3AAFA9;">Status :</label>
+                      <select class="form-control" id="sel1" name="status">
+                        <?php
+                        foreach ($status as $s) {
+                          $this->db->query("SELECT * FROM status")->row_array();
+                          ?>
+                          <option value="<?= $s['Nama_status'] ?>"><?php echo $s['Nama_status']; ?></option>
+                        <?php } ?>
+                      </select>
                     </div>
                     
                     <button type="submit" name="submit" value="submit" class="btn btn-block" style="background-color:#3AAFA9; color: #EEE88A;">Submit</button>

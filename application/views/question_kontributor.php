@@ -62,7 +62,7 @@ body {font-family: "Lato", sans-serif;}
 
   <center style="margin-top:150px;margin-left:150px;"><h4>DATA QUESTION & ANSWER</h4></center><br>
   <center style="margin-left:150px;"><?php echo anchor('C_kontributor/tambah/','Tambah Pertanyaan'); ?></center><br>
-  <center><table style="margin:20px auto;margin-left:420px;" border="1" cellspacing="7" cellpadding="7">
+  <center><table style="margin:20px auto;margin-left:380px;" border="1" cellspacing="7" cellpadding="7">
 		<tr>
 			<th>No</th>
       <th>Pertanyaan</th>
@@ -71,6 +71,7 @@ body {font-family: "Lato", sans-serif;}
       <th>Action 1</th>
       <th>Action 2</th>
       <th>Action 3</th>
+      <th>Action 4</th>
       
 		</tr>
 		<?php 
@@ -84,6 +85,7 @@ body {font-family: "Lato", sans-serif;}
       <td><?php echo $qk['date_answered'];?></td>
             <td><?php echo anchor('C_kontributor/Answer_Kontributor/'.$qk['ID_assigned'],'Jawab'); ?></td>
             <td><?php echo anchor('C_kontributor/ubah/'.$qk['ID_assigned'],'Edit'); ?></td>
+            <td><?php echo anchor('C_kontributor/assignToAdmin/'.$qk['ID_assigned'],'Assigned to admin'); ?></td>
             <td><?php echo anchor('C_kontributor/hapus/'.$qk['ID_assigned'],'Hapus'); ?></td>
 			
 		</tr>

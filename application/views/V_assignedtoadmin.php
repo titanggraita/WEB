@@ -40,12 +40,12 @@ body {font-family: "Lato", sans-serif;}
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-nav fixed-top">
-  <a class="navbar-brand" style="margin-left:50px;margin-top:-30px;" href="<?= base_url() ?>C_Admin"><img src="<?= base_url() ?>assets/gambar/batan1.png" class="img-brand"></a>
+  <a class="navbar-brand" style="margin-left:50px;margin-top:-30px;" href="<?= base_url() ?>C_kontributor"><img src="<?= base_url() ?>assets/gambar/batan1.png" class="img-brand"></a>
   <div class="row">
-      <h4 style="color:#EEE8AA; margin-left:30px;margin-top:10px;">Welcome, Admin!</h4>
+      <h4 style="color:#EEE8AA; margin-left:30px;margin-top:10px;">Welcome, Kontributor!</h4>
     <div class="topnav" style="margin-left:550px;font-size:15px;">
-      <a href="<?=base_url()?>C_Admin/index"><i class="fa fa-fw fa-home fa-lg fa-2x"></i>Home</a>
-      <a href="<?=base_url()?>" style="margin-left:-10px;"><i class="fa fa-fw fa-user fa-lg"></i>Profile</a>
+      <a href="<?=base_url()?>C_kontributir"><i class="fa fa-fw fa-home fa-lg fa-2x"></i>Home</a>
+      <a href="#" style="margin-left:-10px;"><i class="fa fa-fw fa-user fa-lg"></i>Profile</a>
       <a href="<?=base_url()?>C_login/logout"><i class="fa fa-fw fa-sign-out"></i> Sign Out</a>
     </div>
   </div>
@@ -53,14 +53,10 @@ body {font-family: "Lato", sans-serif;}
   <hr>
 </nav>
 
-<div class="sidebar">
+<div class="sidebar" style="margin-top:100px;">
   <br>
   <a href="<?=base_url()?>C_Admin/index""><i class="fa fa-fw fa-tachometer"></i> Dashboard</a><br>
-  <a href="<?=base_url()?>C_Admin/lihat_user"><i class="fa fa-fw fa-users"></i> User</a><br>
-  <a href="<?=base_url()?>C_Admin/lihat_kontributor"><i class="fa fa-fw fa-users"></i> Contributor</a><br>
-  <a href="<?=base_url()?>C_Admin/lihat_question"><i class="fa fa-fw fa-question-circle"></i> Question</a><br>
-  <a href="<?=base_url()?>C_Admin/lihat_category"><i class="fa fa-fw fa-bookmark"></i> Category</a><br>
-   
+  <a href="<?=base_url()?>C_kontributor/lihat_questionKontributor"><i class="fa fa-fw fa-question-circle"></i> Question</a><br>
 </div>
 
 <div id="boxAssign" style="margin-left:450px;margin-top:150px;">
@@ -68,12 +64,12 @@ body {font-family: "Lato", sans-serif;}
                 <form action="" method="POST">
                     <div class="form-group">
                         <p style="color:#3AAFA9;font-size:30px; margin-left:120px;">FORM ASSIGNED</p>
-                        <a style="color:#3AAFA9;">Pertanyaan :</a><input type="text" class="form-control" id="pertanyaan" placeholder="pertanyaan" name="pertanyaan" value="<?php echo $assign->pertanyaan ?>" readonly>
-                    </div>
-                    <!-- <div class="form-group">
-                        <a style="color:#3AAFA9;">User :</a><input type="text" class="form-control" id="user" placeholder="username" name="username">
+                        <a style="color:#3AAFA9;">Pertanyaan :</a><input type="text" class="form-control" id="pertanyaan" placeholder="pertanyaan" name="pertanyaan" value="<?php echo $assigntoAdmin->pertanyaan ?>" readonly>
                     </div>
                     <div class="form-group">
+                        <a style="color:#3AAFA9;">Jawaban :</a><input type="text" class="form-control" id="jawaban" placeholder="jawaban" name="jawaban" value="<?php echo $assigntoAdmin->jawaban ?>" readonly>
+                    </div>
+                    <!-- <div class="form-group">
                         <a style="color:#3AAFA9;">Kompetensi :</a><input type="text" class="form-control" id="kompetensi" placeholder="kompetensi" name="kategori">
                     </div> -->
                     

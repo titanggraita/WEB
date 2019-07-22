@@ -72,7 +72,7 @@
           Don't worry you can submit your question
         </h3>
 
-        <a href="<?= base_url() ?>user/Open_question" class="btn btn-info">Open Question</a>
+        <a href="<?= base_url() ?>user/Open_question" class="btn btn-info" style="color:#EEE8AA;">Open Question</a>
       <?php
       } else {
         ?>
@@ -101,10 +101,12 @@
         ?>
       <?php
       }
-
+      echo "<hr>".$this->pagination->create_links();
       ?>
       <br>
       <a href="<?= base_url() ?>user/Open_question">Do you want to ask a question?</a>
     </div>
   </div>
 </div>
+<!--Load file bootstrap.js-->
+<script type="text/javascript" src="<?php echo base_url().'assets/js/bootstrap.js'?>"></script>
